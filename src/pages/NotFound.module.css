@@ -1,0 +1,19 @@
+.wrap {
+  text-align: center;
+  padding-block: var(--space-8);
+}
+
+.icon {
+  font-size: 3rem;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+.wrap h1 {
+  font-size: 3.5rem;
+}
+
+.wrap p {
+  color: var(--color-text-muted);
+  margin: var(--space-3) 0 var(--space-6);
+}

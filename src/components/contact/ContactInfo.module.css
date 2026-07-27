@@ -1,0 +1,34 @@
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+
+.contactCard {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.contactCard svg {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.contactCard h4 {
+  margin-bottom: var(--space-2);
+}
+
+.contactCard p {
+  font-size: 0.86rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 860px) {
+  .contactGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

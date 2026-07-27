@@ -1,0 +1,29 @@
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.storyImage {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
+}
+
+.storyHeading {
+  margin: var(--space-3) 0 var(--space-4);
+}
+
+.storyGrid p {
+  margin-bottom: var(--space-4);
+  line-height: 1.75;
+}
+
+@media (max-width: 860px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+  }
+}

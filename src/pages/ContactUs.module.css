@@ -1,0 +1,13 @@
+.intro {
+  max-width: 640px;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.intro h1 {
+  margin: var(--space-3) 0 var(--space-4);
+}
+
+.intro p {
+  color: var(--color-text-muted);
+}

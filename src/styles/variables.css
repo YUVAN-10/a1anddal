@@ -1,0 +1,44 @@
+:root {
+  /* colors */
+  --color-bg: #fffdf8;
+  --color-section-bg: #fff8e7;
+  --color-primary: #e67e22;
+  --color-primary-dark: #cf6c14;
+  --color-accent: #c9a227;
+  --color-heading: #5d4037;
+  --color-text: #444444;
+  --color-text-muted: #7a7a7a;
+  --color-success: #4caf50;
+  --color-error: #d94f4f;
+  --color-border: #e8e2d8;
+  --color-white: #ffffff;
+
+  /* type */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  /* shadow */
+  --shadow-soft: 0 4px 20px rgba(93, 64, 55, 0.08);
+  --shadow-hover: 0 10px 30px rgba(93, 64, 55, 0.14);
+
+  /* layout */
+  --header-height: 76px;
+  --container-width: 1280px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  --transition-fast: 0.18s ease;
+  --transition-base: 0.3s ease;
+}

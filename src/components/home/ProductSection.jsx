@@ -1,0 +1,29 @@
+import { Link } from 'react-router-dom'
+import ProductCard from '../product/ProductCard'
+import styles from './ProductSection.module.css'
+
+export default function ProductSection({ eyebrow, title, subtitle, products, tinted = false, viewAllLink }) {
+  if (!products.length) return null
+
+  return (
+    <section className={`section ${tinted ? 'section--tinted' : ''}`}>
+      <div className="container">
+        <div className="section-heading">
+          <span className="eyebrow">{eyebrow}</span>
+          <h2>{title}</h2>
+          {subtitle && <p>{subtitle}</p>}
+        </div>
+        <div className={styles.grid}>
+          {products.slice(0, 8).map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+        {viewAllLink && (
+          <div className={styles.viewAll}>
+            <Link to={viewAllLink}>View All →</Link>
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}
