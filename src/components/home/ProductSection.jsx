@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import ProductCard from '../product/ProductCard'
+import CollectionImageCard from './CollectionImageCard'
 import styles from './ProductSection.module.css'
 
 export default function ProductSection({ eyebrow, title, subtitle, products, tinted = false, viewAllLink }) {
@@ -14,8 +14,8 @@ export default function ProductSection({ eyebrow, title, subtitle, products, tin
           {subtitle && <p>{subtitle}</p>}
         </div>
         <div className={styles.grid}>
-          {products.slice(0, 8).map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {products.slice(0, 4).map((product) => (
+            <CollectionImageCard key={product.id} product={product} />
           ))}
         </div>
         {viewAllLink && (

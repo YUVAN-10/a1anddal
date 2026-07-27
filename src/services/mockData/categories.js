@@ -1,4 +1,9 @@
 import { getPlaceholderImage } from '../../utils/placeholderImage'
+import sambraniCupsImg from '../../assets/products/sambrani-dhoop-cups-1.jpg'
+import incenseImg from '../../assets/products/sri-chakraa-chandan-agarbathi-1.jpg'
+import dhoopConeImg from '../../assets/products/dhoop-cones-1.jpg'
+import dhunaImg from '../../assets/products/jyothi-dhuna-dhoops-1.jpg'
+import powderResinImg from '../../assets/products/kanthrishti-sambrani-powder-1.jpg'
 
 export const categories = [
   {
@@ -6,7 +11,7 @@ export const categories = [
     name: 'Sambrani Cups',
     slug: 'sambrani-cups',
     description: 'Aalayaa, A1 Pal and Singapore cup sambrani in sandal, black and dasangam',
-    image: getPlaceholderImage({ width: 500, height: 500, tone: 'heading' }),
+    image: sambraniCupsImg,
     order: 1,
   },
   {
@@ -14,7 +19,7 @@ export const categories = [
     name: 'Incense Sticks (Agarbathi)',
     slug: 'incense-sticks-agarbathi',
     description: 'Loban candy sticks, sambrani and chandan agarbathi',
-    image: getPlaceholderImage({ width: 500, height: 500, tone: 'primary' }),
+    image: incenseImg,
     order: 2,
   },
   {
@@ -22,7 +27,7 @@ export const categories = [
     name: 'Dhoop Cones',
     slug: 'dhoop-cones',
     description: 'Vasudhaa chandan cones for daily aarti',
-    image: getPlaceholderImage({ width: 500, height: 500, tone: 'accent' }),
+    image: dhoopConeImg,
     order: 3,
   },
   {
@@ -30,7 +35,7 @@ export const categories = [
     name: 'Dhuna Dhoops',
     slug: 'dhuna-dhoops',
     description: 'Jyothi dhuna dhoops for daily pooja and rituals',
-    image: getPlaceholderImage({ width: 500, height: 500, tone: 'border' }),
+    image: dhunaImg,
     order: 4,
   },
   {
@@ -38,7 +43,7 @@ export const categories = [
     name: 'Sambrani Powder & Resin',
     slug: 'sambrani-powder-resin',
     description: 'Kanthrishti sambrani powder and Sathuragiri katti sambrani',
-    image: getPlaceholderImage({ width: 500, height: 500, tone: 'section' }),
+    image: powderResinImg,
     order: 5,
   },
   {
@@ -50,5 +55,3 @@ export const categories = [
     order: 6,
   },
 ]
-
-export const fragranceNotes = ['Loban', 'Sandal', 'Dasangam', 'Chandan', 'Sambrani', 'Camphor']

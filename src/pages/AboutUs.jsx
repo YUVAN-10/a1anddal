@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import StorySection from '../components/about/StorySection'
+import MissionVision from '../components/about/MissionVision'
 import CoreValues from '../components/about/CoreValues'
 
 export default function AboutUs() {
@@ -10,6 +11,7 @@ export default function AboutUs() {
   return (
     <>
       <StorySection />
+      <MissionVision />
       <CoreValues />
     </>
   )

@@ -4,6 +4,14 @@ import sambraniCup2 from '../../assets/products/sambrani-dhoop-cups-2.jpg'
 import sambraniCup3 from '../../assets/products/sambrani-dhoop-cups-3.jpg'
 import chandanCone1 from '../../assets/products/dhoop-cones-1.jpg'
 import chandanCone2 from '../../assets/products/dhoop-cones-2.jpg'
+import saravanabhavaJar1 from '../../assets/products/saravanabhava-agarbathi-jar-1.jpg'
+import sriChakraaAgarbathi1 from '../../assets/products/sri-chakraa-chandan-agarbathi-1.jpg'
+import brand19LobanStick1 from '../../assets/products/19-brand-loban-candy-stick-1.jpg'
+import sathuragiriKattiSambrani1 from '../../assets/products/sathuragiri-katti-sambrani-1.jpg'
+import aalayaaDasangam1 from '../../assets/products/aalayaa-dasangam-plain-cup-1.jpg'
+import a1PalSambrani1 from '../../assets/products/a1-pal-sambrani-1.jpg'
+import jyothiDhunaDhoops1 from '../../assets/products/jyothi-dhuna-dhoops-1.jpg'
+import kanthrishtiPowder1 from '../../assets/products/kanthrishti-sambrani-powder-1.jpg'
 
 function imagesFor(name) {
   return [
@@ -73,6 +81,7 @@ export const products = [
     tags: ['sambrani', 'cup', 'loban'],
     description:
       'Aalayaa Black Cup Sambrani — Loban Fragrance offers a rich, calming aroma that purifies the surroundings and creates a peaceful, spiritual ambiance.',
+    images: [sambraniCup3],
   }),
   product({
     id: 'prod-aalayaa-sandal-cup-sambrani',
@@ -90,7 +99,7 @@ export const products = [
     tags: ['sambrani', 'cup', 'sandal'],
     description:
       'Aalaayaa Sandal Cup Sambrani — Sandal Fragrance fills your space with the soothing, long-lasting aroma of pure sandalwood, creating a calm and divine atmosphere.',
-    images: [sambraniCup1, sambraniCup2, sambraniCup3],
+    images: [sambraniCup1, sambraniCup2],
   }),
   product({
     id: 'prod-aalayaa-dasangam-plain-cup',
@@ -107,6 +116,7 @@ export const products = [
     tags: ['sambrani', 'cup', 'dasangam'],
     description:
       'Aalayaa Dasangam Plain Cup — Experience the pure essence of traditional Dasangam fragrance for a peaceful and spiritually uplifting atmosphere.',
+    images: [aalayaaDasangam1],
   }),
   product({
     id: 'prod-a1-pal-sambrani',
@@ -122,6 +132,7 @@ export const products = [
     isBestSeller: true,
     tags: ['sambrani', 'cup', 'pal'],
     description: 'A1 Pal Sambrani — Crafted using Ven Kungiliyam, Rojanam and traditional aromatic ingredients for a pure pooja experience.',
+    images: [a1PalSambrani1],
   }),
   product({
     id: 'prod-jyothi-dhuna-dhoops',
@@ -142,6 +153,7 @@ export const products = [
     tags: ['dhuna', 'dhoops'],
     description:
       'Jyothi Dhuna Dhoops fill your space with rich, traditional fragrance, creating a pure, peaceful, and divine atmosphere that is ideal for daily pooja, spiritual rituals, and meditation.',
+    images: [jyothiDhunaDhoops1],
   }),
   product({
     id: 'prod-vasudhaa-chandan-cone',
@@ -178,6 +190,7 @@ export const products = [
     tags: ['incense', 'loban', 'candy stick'],
     description:
       'Infused with the rich fragrance of pure Loban, 19 Brand Loban Candy Stick creates a peaceful, refreshing atmosphere, perfect for daily pooja, meditation, and home purification.',
+    images: [brand19LobanStick1],
   }),
   product({
     id: 'prod-singapore-cup-small-jar-sandal',
@@ -288,6 +301,7 @@ export const products = [
     isFeatured: true,
     tags: ['incense', 'agarbathi', 'sambrani'],
     description: 'Saravanabhava Brand Sambrani Agarbathi Jar — Experience the authentic aroma of Sambrani with slow-burning incense for everyday worship and meditation.',
+    images: [saravanabhavaJar1],
   }),
   product({
     id: 'prod-sri-chakraa-chandan-agarbathi',
@@ -307,6 +321,7 @@ export const products = [
     isFeatured: true,
     tags: ['incense', 'agarbathi', 'chandan'],
     description: 'Sri Chakraa Chandan Agarbathi — A premium sandalwood incense stick with a soothing fragrance, perfect for daily pooja and meditation.',
+    images: [sriChakraaAgarbathi1],
   }),
   product({
     id: 'prod-kanthrishti-sambrani-powder',
@@ -326,6 +341,7 @@ export const products = [
     tags: ['powder', 'sambrani'],
     description:
       'Kanthrishti Sambrani Powder — Specially formulated to help ward off the evil eye, this traditional sambrani powder fills your space with a pleasant aroma, creating a peaceful and positive atmosphere for your home and workplace.',
+    images: [kanthrishtiPowder1],
   }),
   product({
     id: 'prod-sathuragiri-katti-sambrani',
@@ -345,6 +361,7 @@ export const products = [
     tags: ['resin', 'sambrani', 'katti'],
     description:
       'Sathuragiri Katti Sambrani — Traditional block sambrani that releases a rich, long-lasting fragrance, creating a pure and peaceful atmosphere for daily prayers and spiritual rituals.',
+    images: [sathuragiriKattiSambrani1],
   }),
   product({
     id: 'prod-pacha-karpooram',

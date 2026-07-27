@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { getProducts } from '../services/productService'
-import { getCategories, getFragranceNotes } from '../services/categoryService'
+import { getCategories } from '../services/categoryService'
 import { getBanners } from '../services/bannerService'
 
 function useAsync(fetcher, initial) {
@@ -34,17 +34,12 @@ export function useCategories() {
   return { categories: data, loading }
 }
 
-export function useFragranceNotes() {
-  const { data, loading } = useAsync(getFragranceNotes, [])
-  return { fragranceNotes: data, loading }
-}
-
 export function useBanners() {
   const { data, loading } = useAsync(getBanners, [])
   return { banners: data, loading }
 }
 
-export function useFilteredProducts(products, { search, categoryIds, fragrances, minPrice, maxPrice, inStockOnly, sortBy }) {
+export function useFilteredProducts(products, { search, sortBy }) {
   return useMemo(() => {
     let result = [...products]
 
@@ -54,28 +49,13 @@ export function useFilteredProducts(products, { search, categoryIds, fragrances,
         (p) => p.name.toLowerCase().includes(q) || p.tags?.some((t) => t.toLowerCase().includes(q)),
       )
     }
-    if (categoryIds?.length) {
-      result = result.filter((p) => categoryIds.includes(p.categoryId))
-    }
-    if (fragrances?.length) {
-      result = result.filter((p) => fragrances.includes(p.fragrance))
-    }
-    if (minPrice != null) {
-      result = result.filter((p) => p.price >= minPrice)
-    }
-    if (maxPrice != null) {
-      result = result.filter((p) => p.price <= maxPrice)
-    }
-    if (inStockOnly) {
-      result = result.filter((p) => p.stock > 0)
-    }
 
     switch (sortBy) {
       case 'price-asc':
-        result.sort((a, b) => a.price - b.price)
+        result.sort((a, b) => (a.minPrice ?? Infinity) - (b.minPrice ?? Infinity))
         break
       case 'price-desc':
-        result.sort((a, b) => b.price - a.price)
+        result.sort((a, b) => (b.minPrice ?? -Infinity) - (a.minPrice ?? -Infinity))
         break
       case 'popular':
         result.sort((a, b) => b.ratingCount - a.ratingCount)
@@ -87,5 +67,5 @@ export function useFilteredProducts(products, { search, categoryIds, fragrances,
         break
     }
     return result
-  }, [products, search, categoryIds, fragrances, minPrice, maxPrice, inStockOnly, sortBy])
+  }, [products, search, sortBy])
 }

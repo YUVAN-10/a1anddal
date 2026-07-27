@@ -6,6 +6,7 @@ import Button from '../components/common/Button'
 import Badge from '../components/common/Badge'
 import ReviewList from '../components/product/ReviewList'
 import RelatedProducts from '../components/product/RelatedProducts'
+import VariantPriceList from '../components/product/VariantPriceList'
 import Loader from '../components/common/Loader'
 import { useProduct, useRelatedProducts, useReviews } from '../hooks/useProductDetails'
 import styles from './ProductDetails.module.css'
@@ -59,6 +60,9 @@ export default function ProductDetails() {
               <span className={styles.outStock}>Out of Stock</span>
             )}
           </div>
+
+          <h3 className={styles.variantsHeading}>Available Sizes & Pricing</h3>
+          <VariantPriceList variants={product.variants} />
         </div>
       </div>
 

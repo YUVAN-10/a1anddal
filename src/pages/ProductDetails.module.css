@@ -45,6 +45,11 @@
   color: var(--color-error);
 }
 
+.variantsHeading {
+  font-size: 1rem;
+  margin-bottom: var(--space-3);
+}
+
 .tabs {
   margin-top: var(--space-8);
 }

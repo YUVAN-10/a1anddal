@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { FaBars, FaTimes, FaSearch } from 'react-icons/fa'
+import logo from '../../assets/logo.png'
 import styles from './Navbar.module.css'
 
 const NAV_LINKS = [
@@ -34,7 +35,7 @@ export default function Navbar() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
         <NavLink to="/" className={styles.brand} onClick={() => setMenuOpen(false)}>
-          A1 <span>Anddal</span>
+          <img src={logo} alt="A1 Anddal & Co" className={styles.logo} />
         </NavLink>
 
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`} aria-label="Primary">

@@ -1,4 +1,4 @@
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp, FaEnvelope } from 'react-icons/fa'
 import styles from './ContactInfo.module.css'
 
 export default function ContactInfo() {
@@ -9,23 +9,32 @@ export default function ContactInfo() {
           <div className={styles.contactCard}>
             <FaMapMarkerAlt aria-hidden="true" />
             <h4>Visit Us</h4>
-            <p>12 Temple Street, Mylapore, Chennai, Tamil Nadu 600004</p>
+            <p>5RPV+F3J Vellottamparappu, Tamil Nadu</p>
           </div>
           <div className={styles.contactCard}>
             <FaPhoneAlt aria-hidden="true" />
             <h4>Call Us</h4>
-            <p>+91 98765 43210</p>
+            <p>
+              <a href="tel:+919780451111">+91 97804 51111</a>
+            </p>
+          </div>
+          <div className={styles.contactCard}>
+            <FaWhatsapp aria-hidden="true" />
+            <h4>WhatsApp Us</h4>
+            <p>
+              <a href="https://wa.me/919780451111" target="_blank" rel="noreferrer">
+                +91 97804 51111
+              </a>
+            </p>
           </div>
           <div className={styles.contactCard}>
             <FaEnvelope aria-hidden="true" />
             <h4>Email Us</h4>
-            <p>hello@a1anddal.com</p>
+            <p>
+              <a href="mailto:a1anddalerode@gmail.com">a1anddalerode@gmail.com</a>
+            </p>
           </div>
-          <div className={styles.contactCard}>
-            <FaClock aria-hidden="true" />
-            <h4>Working Hours</h4>
-            <p>Mon – Sat, 9:00 AM – 7:00 PM</p>
-          </div>
+
         </div>
       </div>
     </section>

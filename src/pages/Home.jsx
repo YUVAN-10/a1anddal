@@ -20,7 +20,6 @@ export default function Home() {
     document.title = 'A1 Anddal — Premium Incense, Dhoop & Dhuna'
   }, [])
 
-  const bestSellers = products.filter((p) => p.isBestSeller)
   const featured = products.filter((p) => p.isFeatured)
 
   if (bannersLoading || categoriesLoading || productsLoading) {
@@ -33,19 +32,12 @@ export default function Home() {
       <TrustBadges />
       <CategoryGrid categories={categories} />
       <ProductSection
-        eyebrow="Loved by Many"
-        title="Best Seller Products"
-        subtitle="Our most cherished fragrances, chosen by thousands of devotees"
-        products={bestSellers}
-        viewAllLink="/products"
-      />
-      <ProductSection
         eyebrow="Curated for You"
         title="Featured Collections"
         subtitle="Handpicked fragrance sets to elevate your daily rituals"
         products={featured}
         tinted
-        viewAllLink="/products?category=cat-collections"
+        viewAllLink="/products"
       />
       <WhyChooseUs />
       <Testimonials testimonials={testimonials} />

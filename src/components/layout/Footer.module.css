@@ -12,14 +12,12 @@
 }
 
 .about .brand {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #fffdf8;
+  display: inline-flex;
 }
 
-.about .brand span {
-  color: var(--color-accent);
+.about .logo {
+  height: 100px;
+  width: 250px;
 }
 
 .about p {
@@ -106,5 +104,20 @@
 @media (max-width: 520px) {
   .grid {
     grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about p {
+    max-width: none;
+  }
+
+  .contact li {
+    justify-content: center;
   }
 }

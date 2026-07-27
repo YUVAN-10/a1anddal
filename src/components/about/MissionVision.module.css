@@ -1,0 +1,40 @@
+.mvGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+.mvCard {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-7);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.mvIcon {
+  display: block;
+  margin: 0 auto var(--space-4);
+  font-size: 2.2rem;
+  color: var(--color-primary);
+}
+
+.mvCard h3 {
+  margin-bottom: var(--space-3);
+}
+
+.mvCard p {
+  text-align: left;
+  margin-bottom: var(--space-3);
+  line-height: 1.7;
+}
+
+.mvCard p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 860px) {
+  .mvGrid {
+    grid-template-columns: 1fr;
+  }
+}

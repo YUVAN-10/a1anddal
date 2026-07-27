@@ -7,9 +7,10 @@
 
 .storyImage {
   width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin-inline: auto;
   border-radius: var(--radius-lg);
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
   box-shadow: var(--shadow-soft);
 }
 
