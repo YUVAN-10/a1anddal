@@ -1,0 +1,25 @@
+.wrap {
+  max-width: 680px;
+  text-align: center;
+  margin-inline: auto;
+  padding-block: 0;
+}
+
+.wrap h2 {
+  margin: var(--space-2) 0 var(--space-4);
+}
+
+.wrap p {
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: var(--space-5);
+}
+
+.link {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.link:hover {
+  text-decoration: underline;
+}

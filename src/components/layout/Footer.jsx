@@ -36,7 +36,8 @@ export default function Footer() {
         <div>
           <h4>Contact Us</h4>
           <ul className={styles.contact}>
-            <li><FaMapMarkerAlt aria-hidden="true" /> 5RPV+F3J Vellottamparappu, Tamil Nadu</li>
+            <li><FaMapMarkerAlt aria-hidden="true" /> A1 Anddal & Co
+17/2,ST-4, Water Tank Street, Vellottamparappu(Post), Vellottamparappu, Erode, 638154 Tamil Nadu</li>
             <li><FaPhoneAlt aria-hidden="true" /> +91 97804 51111</li>
             <li><FaWhatsapp aria-hidden="true" /> +91 97804 51111</li>
             <li><FaEnvelope aria-hidden="true" /> a1anddalerode@gmail.com</li>

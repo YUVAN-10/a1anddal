@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import Hero from '../components/home/Hero'
+import AboutSnippet from '../components/home/AboutSnippet'
 import TrustBadges from '../components/home/TrustBadges'
 import CategoryGrid from '../components/home/CategoryGrid'
 import ProductSection from '../components/home/ProductSection'
@@ -29,6 +30,7 @@ export default function Home() {
   return (
     <>
       <Hero banners={banners} />
+      <AboutSnippet />
       <TrustBadges />
       <CategoryGrid categories={categories} />
       <ProductSection
