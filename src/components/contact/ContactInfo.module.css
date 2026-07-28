@@ -74,7 +74,7 @@
 
 .card p a:hover {
   color: var(--color-primary);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .mapWrap {
