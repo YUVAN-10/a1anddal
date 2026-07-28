@@ -1,18 +1,29 @@
-.breadcrumb {
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
+.backBtn {
+  color: var(--color-heading);
+  border: 1.5px solid var(--color-heading);
+  background: var(--color-bg);
   margin-bottom: var(--space-5);
 }
 
-.breadcrumb a {
-  color: var(--color-text-muted);
+.backBtn:hover {
+  background: var(--color-heading);
+  color: var(--color-white);
 }
 
-.breadcrumb a:hover {
-  color: var(--color-primary);
+.backIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-heading);
+  color: var(--color-white);
+  font-size: 0.7rem;
 }
 
-.breadcrumb span {
+.backBtn:hover .backIcon {
+  background: var(--color-white);
   color: var(--color-heading);
 }
 
@@ -24,6 +35,9 @@
 
 .info h1 {
   margin: var(--space-2) 0 var(--space-2);
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: normal;
 }
 
 .shortDesc {
@@ -31,82 +45,10 @@
   line-height: 1.7;
 }
 
-.stockRow {
-  margin-bottom: var(--space-4);
-  font-size: 0.86rem;
-  font-weight: 600;
-}
-
-.inStock {
-  color: var(--color-success);
-}
-
-.outStock {
-  color: var(--color-error);
-}
-
 .variantsHeading {
-  font-size: 1rem;
-  margin-bottom: var(--space-3);
-}
-
-.tabs {
-  margin-top: var(--space-8);
-}
-
-.tabHeaders {
-  display: flex;
-  gap: var(--space-6);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.tab,
-.tabActive {
-  padding: var(--space-3) 0;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  position: relative;
-}
-
-.tabActive {
-  color: var(--color-primary);
-}
-
-.tabActive::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 2px;
-  background: var(--color-primary);
-}
-
-.tabPanel {
-  padding-top: var(--space-5);
-  max-width: 720px;
-}
-
-.specsTable {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.specsTable tr {
-  border-bottom: 1px solid var(--color-border);
-}
-
-.specsTable th,
-.specsTable td {
-  text-align: left;
-  padding: 10px 0;
-  font-size: 0.9rem;
-}
-
-.specsTable th {
+  font-size: 1.5rem;
   color: var(--color-heading);
-  width: 40%;
-  font-weight: 600;
+  margin-bottom: var(--space-3);
 }
 
 .notFound {

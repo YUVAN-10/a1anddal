@@ -1,5 +1,5 @@
 body {
-  background: var(--color-bg);
+  background: var(--color-section-bg);
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: 15px;
@@ -19,6 +19,8 @@ h4 {
 
 h1 {
   font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 h2 {

@@ -1,6 +1,6 @@
 .section {
   padding-top: 0;
-  background: #efe3c8;
+  background: var(--color-section-bg);
 }
 
 .card {

@@ -1,7 +1,7 @@
 :root {
   /* colors */
   --color-bg: #fffdf8;
-  --color-section-bg: #fff8e7;
+  --color-section-bg: #efe3c8;
   --color-primary: #e67e22;
   --color-primary-dark: #cf6c14;
   --color-accent: #c9a227;
@@ -14,7 +14,7 @@
   --color-white: #ffffff;
 
   /* type */
-  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-heading: 'Cinzel', Georgia, serif;
   --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* radius */

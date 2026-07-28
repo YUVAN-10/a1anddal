@@ -2,8 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 500;
-  background: #efe3c8;
-
+  background: #3a2416;
   backdrop-filter: blur(8px);
   border-bottom: 1px solid transparent;
   transition: box-shadow var(--transition-base), border-color var(--transition-base);
@@ -42,9 +41,10 @@
 
 .link,
 .activeLink {
+  font-family: var(--font-body);
   font-weight: 500;
   font-size: 0.94rem;
-  color: var(--color-text);
+  color: var(--color-white);
   position: relative;
   padding: 6px 2px;
   transition: color var(--transition-fast);
@@ -89,7 +89,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  color: var(--color-heading);
+  color: var(--color-white);
   font-size: 1.02rem;
   transition: background var(--transition-fast), color var(--transition-fast);
 }
@@ -106,7 +106,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  color: var(--color-heading);
+  color: var(--color-white);
   font-size: 1.15rem;
 }
 
@@ -137,6 +137,7 @@
 
   .link,
   .activeLink {
+    color: var(--color-heading);
     padding: 14px 4px;
     border-bottom: 1px solid var(--color-border);
   }

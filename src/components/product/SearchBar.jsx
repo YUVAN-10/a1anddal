@@ -4,7 +4,9 @@ import styles from './SearchBar.module.css'
 export default function SearchBar({ value, onChange }) {
   return (
     <div className={styles.wrap}>
-      <FaSearch aria-hidden="true" />
+      <span className={styles.iconBadge}>
+        <FaSearch aria-hidden="true" />
+      </span>
       <input
         type="search"
         placeholder="Search for incense, dhoop, dhuna..."

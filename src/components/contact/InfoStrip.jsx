@@ -26,20 +26,18 @@ const ITEMS = [
 
 export default function InfoStrip() {
   return (
-    <section className={`section ${styles.section}`}>
-      <div className={`container ${styles.strip}`}>
-        {ITEMS.map((item) => (
-          <div key={item.label} className={styles.item}>
-            <span className={styles.icon}>{item.icon}</span>
-            <div>
-              <h4>{item.label}</h4>
-              {item.lines.map((line) => (
-                <p key={line}>{line}</p>
-              ))}
-            </div>
+    <div className={styles.strip}>
+      {ITEMS.map((item) => (
+        <div key={item.label} className={styles.item}>
+          <span className={styles.icon}>{item.icon}</span>
+          <div>
+            <h4>{item.label}</h4>
+            {item.lines.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
           </div>
-        ))}
-      </div>
-    </section>
+        </div>
+      ))}
+    </div>
   )
 }

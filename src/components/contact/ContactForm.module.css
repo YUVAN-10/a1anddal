@@ -1,7 +1,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-5);
 }
 
 .field {
@@ -12,14 +12,14 @@
 
 .icon {
   position: absolute;
-  left: 18px;
+  left: 20px;
   color: var(--color-text-muted);
-  font-size: 0.95rem;
+  font-size: 1rem;
   pointer-events: none;
 }
 
 .fieldTextarea .icon {
-  top: 16px;
+  top: 18px;
 }
 
 .field input,
@@ -28,15 +28,15 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-bg);
-  padding: 14px 16px 14px 46px;
-  font-size: 0.92rem;
+  padding: 16px 18px 16px 50px;
+  font-size: 0.98rem;
   font-family: var(--font-body);
   color: var(--color-text);
   resize: vertical;
 }
 
 .field textarea {
-  padding-top: 16px;
+  padding-top: 18px;
 }
 
 .field input::placeholder,
@@ -53,8 +53,8 @@
 
 .error {
   color: var(--color-error);
-  font-size: 0.78rem;
-  margin-top: -8px;
+  font-size: 0.8rem;
+  margin-top: -10px;
 }
 
 .submit {
@@ -63,10 +63,11 @@
   align-items: center;
   gap: var(--space-2);
   margin-top: var(--space-2);
-  padding: 14px 32px;
+  padding: 16px 38px;
   border-radius: var(--radius-full);
   background: var(--color-heading);
   color: var(--color-white);
+  font-size: 1rem;
   font-weight: 600;
   transition: background var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
@@ -78,5 +79,5 @@
 }
 
 .submit svg {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }

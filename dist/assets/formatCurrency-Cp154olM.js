@@ -1,0 +1,1 @@
+function e(e){return new Intl.NumberFormat(`en-IN`,{style:`currency`,currency:`INR`,maximumFractionDigits:0}).format(e??0)}function t(t){return t.minPrice==null?`Price on request`:t.variants?.length>1?`From ${e(t.minPrice)}`:e(t.minPrice)}export{t as n,e as t};

@@ -6,11 +6,9 @@ import CategoryGrid from '../components/home/CategoryGrid'
 import ProductSection from '../components/home/ProductSection'
 import WhyChooseUs from '../components/home/WhyChooseUs'
 import Testimonials from '../components/home/Testimonials'
-import FAQAccordion from '../components/home/FAQAccordion'
 import Loader from '../components/common/Loader'
 import { useBanners, useCategories, useProducts } from '../hooks/useProducts'
 import { testimonials } from '../services/mockData/testimonials'
-import { faqs } from '../services/mockData/faqs'
 
 export default function Home() {
   const { banners, loading: bannersLoading } = useBanners()
@@ -43,7 +41,6 @@ export default function Home() {
       />
       <WhyChooseUs />
       <Testimonials testimonials={testimonials} />
-      <FAQAccordion faqs={faqs} />
     </>
   )
 }

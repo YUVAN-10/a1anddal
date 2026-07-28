@@ -18,7 +18,8 @@
 
 .header strong {
   color: var(--color-heading);
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
+  font-weight: 600;
 }
 
 .review p {

@@ -8,7 +8,7 @@ export default function StorySection() {
         <img src={storyImage} alt="A1 Anddal & Co — premium pooja essentials" className={styles.storyImage} />
         <div>
           <span className="eyebrow">Our Story</span>
-          <h1 className={styles.storyHeading}>Crafting Divine Fragrance, One Stick at a Time</h1>
+          <h2 className={styles.storyHeading}>Crafting Divine Fragrance, One Stick at a Time</h2>
           <p>
             A1 Anddal & Co. is dedicated to bringing purity, tradition, and divine fragrance into every home. We manufacture premium incense and pooja products that create a peaceful and spiritually uplifting atmosphere for daily prayers, meditation, temples, and home wellness.
           </p>

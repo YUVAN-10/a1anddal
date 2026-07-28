@@ -1,16 +1,23 @@
 .section {
-  background: #efe3c8;
+  background: var(--color-section-bg);
 }
 
 .layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.5fr 1.5fr;
   gap: var(--space-7);
-  align-items: center;
+  align-items: stretch;
 }
 
+.infoCol,
 .formCol {
-  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.infoStripWrap {
+  flex: 1;
 }
 
 .heading {
@@ -20,78 +27,7 @@
 .subtext {
   color: var(--color-text-muted);
   margin-bottom: var(--space-5);
-  max-width: 400px;
-}
-
-.imagePanel {
-  display: flex;
-  justify-content: center;
-}
-
-.imageFrame {
-  position: relative;
-  width: 100%;
-  max-width: 420px;
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radius-lg);
-  background: radial-gradient(circle at 50% 20%, rgba(230, 126, 34, 0.14) 0%, transparent 55%), var(--color-section-bg);
-  box-shadow: var(--shadow-soft);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: var(--space-6);
-}
-
-.arch {
-  position: relative;
-  width: 62%;
-  aspect-ratio: 3 / 4;
-  border-radius: 50% 50% 12px 12px / 40% 40% 12px 12px;
-  background: radial-gradient(circle at 50% 30%, #8a5a38 0%, #5c3a24 55%, #2e1a10 100%);
-  box-shadow: var(--shadow-hover);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.arch::before {
-  content: '';
-  position: absolute;
-  inset: 12px;
-  border: 1px solid rgba(255, 219, 172, 0.35);
-  border-radius: inherit;
-}
-
-.templeIcon {
-  font-size: 4.5rem;
-  color: #f3d9a6;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
-}
-
-.flame {
-  align-self: flex-end;
-  margin-bottom: var(--space-3);
-  font-size: 1.8rem;
-  color: #ffb347;
-  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2));
-}
-
-.flameLeft {
-  order: -1;
-  margin-right: var(--space-3);
-}
-
-.flameRight {
-  order: 1;
-  margin-left: var(--space-3);
-}
-
-.lotus {
-  position: absolute;
-  top: 10%;
-  font-size: 1.6rem;
-  color: var(--color-accent);
-  opacity: 0.55;
+  max-width: 480px;
 }
 
 @media (max-width: 900px) {
@@ -99,15 +35,8 @@
     grid-template-columns: 1fr;
   }
 
+  .infoCol,
   .formCol {
     max-width: none;
-  }
-
-  .imagePanel {
-    order: -1;
-  }
-
-  .imageFrame {
-    max-width: 320px;
   }
 }
