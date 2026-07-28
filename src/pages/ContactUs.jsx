@@ -1,5 +1,8 @@
 import { useEffect } from 'react'
-import ContactInfo from '../components/contact/ContactInfo'
+import GetInTouch from '../components/contact/GetInTouch'
+import InfoStrip from '../components/contact/InfoStrip'
+import ContactMap from '../components/contact/ContactMap'
+import KeepInTouch from '../components/contact/KeepInTouch'
 import styles from './ContactUs.module.css'
 
 export default function ContactUs() {
@@ -9,17 +12,18 @@ export default function ContactUs() {
 
   return (
     <>
-      <section className="section">
+      <section className={styles.hero}>
         <div className={`container ${styles.intro}`}>
-          <span className="eyebrow">We'd Love to Hear From You</span>
-          <h1>Contact Us</h1>
-          <p>
-            Questions about a fragrance, an order, or just want to say hello? Reach out to us through any of the
-            channels below.
-          </p>
+          <h1 className="visually-hidden">Contact Us</h1>
+          <p className="visually-hidden">We would love to hear from you.</p>
         </div>
       </section>
-      <ContactInfo />
+
+      <GetInTouch />
+      <InfoStrip />
+      <ContactMap />
+      <KeepInTouch />
+      <div className={styles.spacer} />
     </>
   )
 }

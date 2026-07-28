@@ -1,0 +1,16 @@
+.section {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2098 / 750;
+  background: #1c110a url('../../assets/keep-in-touch.png') center / cover no-repeat;
+}
+
+/* .iconLink {
+  position: absolute;
+  top: 61%;
+  width: 7.2%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  outline-offset: 4px;
+} */

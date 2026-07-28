@@ -2,7 +2,8 @@
   position: sticky;
   top: 0;
   z-index: 500;
-  background: rgba(255, 253, 248, 0.92);
+  background: #efe3c8;
+
   backdrop-filter: blur(8px);
   border-bottom: 1px solid transparent;
   transition: box-shadow var(--transition-base), border-color var(--transition-base);

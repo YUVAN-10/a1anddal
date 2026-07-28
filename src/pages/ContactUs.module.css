@@ -1,13 +1,23 @@
+.hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1810 / 869;
+  max-height: 560px;
+  background: #1c110a url('../assets/contact-hero.png') center / cover no-repeat;
+}
+
 .intro {
   max-width: 640px;
-  text-align: center;
   margin-inline: auto;
 }
 
-.intro h1 {
-  margin: var(--space-3) 0 var(--space-4);
+.spacer {
+  height: var(--space-7);
+  background: #efe3c8;
 }
 
-.intro p {
-  color: var(--color-text-muted);
+@media (max-width: 640px) {
+  .hero {
+    aspect-ratio: 4 / 5;
+  }
 }
