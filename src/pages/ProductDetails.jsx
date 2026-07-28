@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ImageGallery from '../components/product/ImageGallery'
-import RatingStars from '../components/common/RatingStars'
 import Button from '../components/common/Button'
 import Badge from '../components/common/Badge'
 import ReviewList from '../components/product/ReviewList'
@@ -49,7 +48,6 @@ export default function ProductDetails() {
         <div className={styles.info}>
           {product.isBestSeller && <Badge tone="accent">Best Seller</Badge>}
           <h1>{product.name}</h1>
-          <RatingStars rating={product.rating} count={product.ratingCount} />
 
           <p className={styles.shortDesc}>{product.description}</p>
 

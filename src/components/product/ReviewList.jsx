@@ -1,4 +1,4 @@
-import RatingStars from '../common/RatingStars'
+
 import EmptyState from '../common/EmptyState'
 import { FaCommentDots } from 'react-icons/fa'
 import styles from './ReviewList.module.css'
@@ -20,7 +20,6 @@ export default function ReviewList({ reviews }) {
         <div className={styles.review} key={review.id}>
           <div className={styles.header}>
             <strong>{review.userName}</strong>
-            <RatingStars rating={review.rating} />
           </div>
           <p>{review.comment}</p>
         </div>

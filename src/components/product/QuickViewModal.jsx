@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import Modal from '../common/Modal'
-import RatingStars from '../common/RatingStars'
 import Button from '../common/Button'
 import { formatStartingPrice } from '../../utils/formatCurrency'
 import styles from './QuickViewModal.module.css'
@@ -13,7 +12,6 @@ export default function QuickViewModal({ product, isOpen, onClose }) {
       <div className={styles.grid}>
         <img src={product.images?.[0]} alt={product.name} className={styles.image} />
         <div>
-          <RatingStars rating={product.rating} count={product.ratingCount} />
           <p className={styles.price}>{formatStartingPrice(product)}</p>
           <p className={styles.description}>{product.description}</p>
           <div className={styles.actions}>

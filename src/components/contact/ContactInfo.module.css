@@ -26,14 +26,14 @@
 }
 
 .cardHighlight {
-  background: var(--color-primary);
-  color: var(--color-white);
+  background: var(--color-white);
+  color: var(--color-black);
 }
 
 .cardHighlight h4,
 .cardHighlight p,
 .cardHighlight a {
-  color: var(--color-white);
+  color: var(--color-black);
 }
 
 .cardIcon {
@@ -50,8 +50,8 @@
 }
 
 .cardHighlight .cardIcon {
-  background: rgba(255, 255, 255, 0.2);
-  color: var(--color-white);
+  background: rgba(255, 219, 172, 0.2);
+  color: var(--color-primary);
 }
 
 .card h4,

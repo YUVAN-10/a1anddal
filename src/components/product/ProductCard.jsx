@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaEye } from 'react-icons/fa'
-import RatingStars from '../common/RatingStars'
 import QuickViewModal from './QuickViewModal'
 import { formatStartingPrice } from '../../utils/formatCurrency'
 import styles from './ProductCard.module.css'
@@ -29,7 +28,7 @@ export default function ProductCard({ product }) {
           <Link to={`/products/${product.slug}`} className={styles.name}>
             {product.name}
           </Link>
-          <RatingStars rating={product.rating} count={product.ratingCount} />
+          
           <span className={styles.price}>{formatStartingPrice(product)}</span>
         </div>
       </article>

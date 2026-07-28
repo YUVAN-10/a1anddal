@@ -1,5 +1,4 @@
 import { FaQuoteLeft } from 'react-icons/fa'
-import RatingStars from '../common/RatingStars'
 import styles from './Testimonials.module.css'
 
 export default function Testimonials({ testimonials }) {
@@ -15,7 +14,6 @@ export default function Testimonials({ testimonials }) {
           {testimonials.map((t) => (
             <figure className={styles.card} key={t.id}>
               <FaQuoteLeft className={styles.quoteIcon} aria-hidden="true" />
-              <RatingStars rating={t.rating} />
               <blockquote>{t.comment}</blockquote>
               <figcaption>
                 <strong>{t.name}</strong>
