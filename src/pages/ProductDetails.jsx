@@ -7,6 +7,7 @@ import ReviewList from '../components/product/ReviewList'
 import RelatedProducts from '../components/product/RelatedProducts'
 import VariantPriceList from '../components/product/VariantPriceList'
 import Loader from '../components/common/Loader'
+import WhatsAppFloatButton from '../components/common/WhatsAppFloatButton'
 import { useProduct, useRelatedProducts, useReviews } from '../hooks/useProductDetails'
 import styles from './ProductDetails.module.css'
 
@@ -107,6 +108,7 @@ export default function ProductDetails() {
       </div>
 
       <RelatedProducts products={related} />
+      <WhatsAppFloatButton />
     </div>
   )
 }
