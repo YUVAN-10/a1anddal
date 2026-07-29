@@ -6,15 +6,15 @@ export default function ProductSection({ eyebrow, title, subtitle, products, tin
   if (!products.length) return null
 
   return (
-    <section className={`section ${tinted ? 'section--tinted' : ''}`}>
+    <section className={`section ${tinted ? styles.dark : ''}`}>
       <div className="container">
-        <div className="section-heading">
+        <div className={`section-heading ${tinted ? styles.darkHeading : ''}`}>
           <span className="eyebrow">{eyebrow}</span>
           <h2>{title}</h2>
           {subtitle && <p>{subtitle}</p>}
         </div>
         <div className={styles.grid}>
-          {products.slice(0, 4).map((product) => (
+          {products.slice(0, 6).map((product) => (
             <CollectionImageCard key={product.id} product={product} />
           ))}
         </div>

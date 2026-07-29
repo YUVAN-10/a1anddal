@@ -1,21 +1,30 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-5);
+  gap: var(--space-6);
 }
 
 .card {
-  position: relative;
-  display: block;
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   opacity: 0;
+}
+
+.archWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 50% 50% var(--radius-md) var(--radius-md);
+  border: 3px solid var(--color-accent);
+  box-shadow: var(--shadow-soft);
+  background: var(--color-section-bg);
   transition: box-shadow var(--transition-base), transform var(--transition-base);
 }
 
-.card:hover {
+.card:hover .archWrap {
   box-shadow: var(--shadow-hover);
   transform: translateY(-6px);
 }
@@ -30,39 +39,24 @@
 }
 
 .card:hover .image {
-  transform: scale(1.08) rotate(0.5deg);
+  transform: scale(1.08);
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(93, 64, 55, 0) 35%, rgba(93, 64, 55, 0.88) 100%);
-  transition: background var(--transition-base);
+.body {
+  margin-top: var(--space-4);
+  max-width: 280px;
 }
 
-.card:hover .overlay {
-  background: linear-gradient(180deg, rgba(93, 64, 55, 0.1) 20%, rgba(93, 64, 55, 0.94) 100%);
-}
-
-.content {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: var(--space-5);
-  color: var(--color-white);
-}
-
-.content h3 {
-  color: var(--color-white);
-  font-size: 1.3rem;
+.body h3 {
+  font-size: 1.15rem;
+  color: var(--color-heading);
   margin-bottom: 6px;
 }
 
-.content p {
-  color: #f1e6de;
-  font-size: 0.84rem;
-  margin-bottom: var(--space-3);
+.body p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -75,15 +69,12 @@
   gap: 6px;
   font-size: 0.82rem;
   font-weight: 700;
-  color: var(--color-accent);
-  opacity: 0;
-  transform: translateX(-6px);
-  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  color: var(--color-primary);
+  transition: gap var(--transition-fast);
 }
 
 .card:hover .cta {
-  opacity: 1;
-  transform: translateX(0);
+  gap: 10px;
 }
 
 @media (max-width: 860px) {
@@ -94,6 +85,10 @@
   .card:nth-child(3) {
     grid-column: span 2;
   }
+
+  .card:nth-child(3) .archWrap {
+    max-width: 320px;
+  }
 }
 
 @media (max-width: 520px) {
@@ -103,5 +98,9 @@
 
   .card:nth-child(3) {
     grid-column: span 1;
+  }
+
+  .card:nth-child(3) .archWrap {
+    max-width: none;
   }
 }

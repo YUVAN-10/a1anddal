@@ -28,9 +28,12 @@
 }
 
 .logo {
-  height:110px;
-  width:250px;
-  margin-top: 20px;
+  height: 76px;
+  width: auto;
+  background: #fff;
+  border-radius: var(--radius-md, 8px);
+  padding: 4px 10px;
+  object-fit: contain;
 }
 
 .nav {

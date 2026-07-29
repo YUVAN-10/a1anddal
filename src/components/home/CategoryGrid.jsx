@@ -20,9 +20,10 @@ export default function CategoryGrid({ categories }) {
               className={`${styles.card} fade-in-up`}
               style={{ animationDelay: `${i * 0.12}s` }}
             >
-              <img src={cat.image} alt={cat.name} loading="lazy" className={styles.image} />
-              <div className={styles.overlay} />
-              <div className={styles.content}>
+              <div className={styles.archWrap}>
+                <img src={cat.image} alt={cat.name} loading="lazy" className={styles.image} />
+              </div>
+              <div className={styles.body}>
                 <h3>{cat.name}</h3>
                 <p>{cat.description}</p>
                 <span className={styles.cta}>Shop Now →</span>

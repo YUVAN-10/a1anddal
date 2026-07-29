@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { FaBars, FaTimes, FaSearch } from 'react-icons/fa'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo-cropped.png'
 import styles from './Navbar.module.css'
 
 const NAV_LINKS = [

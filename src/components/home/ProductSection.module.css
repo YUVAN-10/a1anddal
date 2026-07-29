@@ -1,7 +1,7 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-5);
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-4);
 }
 
 .viewAll {
@@ -14,9 +14,31 @@
   color: var(--color-primary);
 }
 
+.dark {
+  position: relative;
+  background-color: #17130f;
+  background-image:
+    linear-gradient(rgba(241, 230, 222, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241, 230, 222, 0.05) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 0%, rgba(90, 58, 36, 0.45) 0%, transparent 60%);
+  background-size: 28px 28px, 28px 28px, 100% 100%;
+}
+
+.darkHeading :global(h2) {
+  color: #f1e6de;
+}
+
+.darkHeading :global(p) {
+  color: #c9b8ae;
+}
+
+.dark .viewAll a {
+  color: var(--color-accent);
+}
+
 @media (max-width: 1080px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
