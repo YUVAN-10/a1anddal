@@ -1,30 +1,25 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FaQuoteLeft } from 'react-icons/fa'
 import styles from './Testimonials.module.css'
 
-export default function Testimonials({ testimonials }) {
-  const gridRef = useRef(null)
-  const [visibleIds, setVisibleIds] = useState(() => new Set())
+const AUTO_ROTATE_INTERVAL = 10000
+
+export default function Testimonials({ testimonials = [] }) {
+  const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
-    const cards = gridRef.current?.querySelectorAll('[data-testimonial-id]')
-    if (!cards?.length) return
+    if (!testimonials.length) return
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return
-          const id = entry.target.dataset.testimonialId
-          setVisibleIds((prev) => new Set(prev).add(id))
-          observer.unobserve(entry.target)
-        })
-      },
-      { threshold: 0.25 },
-    )
+    const intervalId = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % testimonials.length)
+    }, AUTO_ROTATE_INTERVAL)
 
-    cards.forEach((card) => observer.observe(card))
-    return () => observer.disconnect()
-  }, [testimonials])
+    return () => window.clearInterval(intervalId)
+  }, [testimonials.length])
+
+  if (!testimonials.length) return null
+
+  const activeTestimonial = testimonials[activeIndex] ?? testimonials[0]
 
   return (
     <section className="section">
@@ -34,22 +29,41 @@ export default function Testimonials({ testimonials }) {
           <h2>What Our Customers Say</h2>
           <p>Real experiences from devotees who shopped with us</p>
         </div>
-        <div className={styles.grid} ref={gridRef}>
-          {testimonials.map((t, i) => (
-            <figure
-              className={`${styles.card} ${visibleIds.has(String(t.id)) ? styles.visible : ''}`}
-              style={{ transitionDelay: `${i * 120}ms` }}
-              data-testimonial-id={t.id}
-              key={t.id}
-            >
-              <FaQuoteLeft className={styles.quoteIcon} aria-hidden="true" />
-              <blockquote>{t.comment}</blockquote>
-              <figcaption>
-                <strong>{t.name}</strong>
-                <span>{t.location}</span>
-              </figcaption>
-            </figure>
-          ))}
+
+        <div className={styles.shell}>
+          <article className={styles.heroCard} key={activeTestimonial.id}>
+            <FaQuoteLeft className={styles.quoteIcon} aria-hidden="true" />
+            <blockquote className={styles.comment}>{activeTestimonial.comment}</blockquote>
+            <div className={styles.meta}>
+              <strong>{activeTestimonial.name}</strong>
+              <span>{activeTestimonial.location}</span>
+            </div>
+          </article>
+
+          <div className={styles.controls}>
+            <div className={styles.progressTrack} key={activeTestimonial.id}>
+              <span className={styles.progressBar} />
+            </div>
+
+            <div className={styles.tabs} role="tablist" aria-label="Customer testimonials">
+              {testimonials.map((testimonial, index) => {
+                const isActive = index === activeIndex
+
+                return (
+                  <button
+                    type="button"
+                    key={testimonial.id}
+                    role="tab"
+                    aria-selected={isActive}
+                    className={`${styles.tab} ${isActive ? styles.activeTab : ''}`}
+                    onClick={() => setActiveIndex(index)}
+                  >
+                    <span className={styles.tabLabel}>{testimonial.name}</span>
+                  </button>
+                )
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>

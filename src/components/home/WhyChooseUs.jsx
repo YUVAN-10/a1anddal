@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { FaAward, FaCogs, FaTag, FaPrayingHands, FaShieldAlt } from 'react-icons/fa'
 import { GiFactory, GiPerfumeBottle, GiLotus } from 'react-icons/gi'
 import styles from './WhyChooseUs.module.css'
@@ -14,16 +15,29 @@ const POINTS = [
 ]
 
 export default function WhyChooseUs() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => setIsVisible(true), 120)
+    return () => window.clearTimeout(timeoutId)
+  }, [])
+
   return (
     <section className="section section--tinted">
       <div className="container">
-        <div className="section-heading">
-          <span className="eyebrow">Our Promise</span>
-          <h2>Why Choose Us</h2>
+        <div className={styles.headingWrap}>
+          <div className="section-heading">
+            <span className="eyebrow">Our Promise</span>
+            <h2>Why Choose Us</h2>
+          </div>
         </div>
         <div className={styles.grid}>
-          {POINTS.map((p) => (
-            <div className={styles.item} key={p.title}>
+          {POINTS.map((p, index) => (
+            <div
+              className={`${styles.item} ${isVisible ? styles.visible : ''}`}
+              key={p.title}
+              style={{ animationDelay: `${index * 90}ms` }}
+            >
               <span className={styles.icon}>{p.icon}</span>
               <h4>{p.title}</h4>
             </div>

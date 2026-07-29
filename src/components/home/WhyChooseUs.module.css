@@ -1,6 +1,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 0;
 }
 
 .item {
@@ -12,6 +13,23 @@
   padding: var(--space-5) var(--space-4);
   border-right: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(8px);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease;
+  transform: translateY(24px);
+  opacity: 0;
+  animation: revealItem 0.55s ease forwards;
+}
+
+.item.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px rgba(48, 37, 19, 0.12);
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .item:nth-child(4n) {
@@ -73,5 +91,19 @@
 
   .item h4 {
     font-size: 0.82rem;
+  }
+}
+
+@keyframes revealItem {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+    filter: blur(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 }
