@@ -85,24 +85,7 @@ export default function Testimonials({ testimonials = [] }) {
               />
             </div>
 
-            <div className={styles.tabs} role="tablist" aria-label="Customer testimonials">
-              {testimonials.map((testimonial, index) => {
-                const isActive = index === activeIndex
-
-                return (
-                  <button
-                    type="button"
-                    key={testimonial.id}
-                    role="tab"
-                    aria-selected={isActive}
-                    className={`${styles.tab} ${isActive ? styles.activeTab : ''}`}
-                    onClick={() => setActiveIndex(index)}
-                  >
-                    <span className={styles.tabLabel}>{testimonial.name}</span>
-                  </button>
-                )
-              })}
-            </div>
+            
           </div>
         </div>
       </div>

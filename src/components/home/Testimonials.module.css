@@ -139,38 +139,6 @@
   will-change: width;
 }
 
-.tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
-.tab {
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
-  color: var(--color-text-muted);
-  cursor: pointer;
-  padding: 0.75rem 1.05rem;
-  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, backdrop-filter 0.25s ease;
-  backdrop-filter: blur(8px);
-}
-
-.tab:hover {
-  transform: translateY(-2px) scale(1.01);
-}
-
-.tab.activeTab {
-  background: var(--color-accent);
-  color: #fff;
-  box-shadow: 0 12px 32px rgba(189, 151, 93, 0.22);
-}
-
-.tabLabel {
-  font-size: 0.92rem;
-  font-weight: 600;
-}
-
 @keyframes testimonialReveal {
   0% {
     opacity: 0;
@@ -204,7 +172,6 @@
 @media (prefers-reduced-motion: reduce) {
   .heroCard,
   .progressBar,
-  .tab,
   .shell::before,
   .shell::after {
     animation: none;
@@ -219,14 +186,5 @@
 
   .shell {
     perspective: 1200px;
-  }
-
-  .tabs {
-    gap: var(--space-2);
-  }
-
-  .tab {
-    width: 100%;
-    justify-content: center;
   }
 }

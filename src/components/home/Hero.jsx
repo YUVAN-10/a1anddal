@@ -25,19 +25,21 @@ export default function Hero({ banners }) {
             className={`${styles.bgImage} ${i === active ? styles.bgActive : ''}`}
           />
         ))}
-        <div className={styles.overlay} />
+        {!banner.imageOnly && <div className={styles.overlay} />}
       </div>
 
-      <div className={`container ${styles.content} fade-in-up`} key={banner.id}>
-        <span className={styles.eyebrow}>Welcome to A1 Andal</span>
-        <h1>{banner.title}</h1>
-        <p>{banner.subtitle}</p>
-        <div className={styles.ctaRow}>
-          <Button to={banner.ctaLink ?? '/products'} variant="primary" size="lg">
-            {banner.ctaLabel ?? 'Explore Products'}
-          </Button>
+      {!banner.imageOnly && (
+        <div className={`container ${styles.content} fade-in-up`} key={banner.id}>
+          <span className={styles.eyebrow}>Welcome to A1 Andal</span>
+          <h1>{banner.title}</h1>
+          <p>{banner.subtitle}</p>
+          <div className={styles.ctaRow}>
+            <Button to={banner.ctaLink ?? '/products'} variant="primary" size="lg">
+              {banner.ctaLabel ?? 'Explore Products'}
+            </Button>
+          </div>
         </div>
-      </div>
+      )}
 
       {banners.length > 1 && (
         <div className={styles.dots}>

@@ -1,4 +1,4 @@
-import heroImage from '../../assets/contact-hero.png'
+import heroImage from '../../assets/page-hero-banner.png'
 import styles from './PageHero.module.css'
 
 export default function PageHero({ title, subtitle }) {

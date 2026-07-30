@@ -1,6 +1,15 @@
 import { getPlaceholderImage } from '../../utils/placeholderImage'
+import pureTraditionalDivine from '../../assets/page-hero-banner.png'
 
 export const banners = [
+  {
+    id: 'banner-hero-0',
+    image: pureTraditionalDivine,
+    imageOnly: true,
+    ctaLink: '/products',
+    order: 0,
+    active: true,
+  },
   {
     id: 'banner-hero-1',
     image: getPlaceholderImage({ width: 1600, height: 700, tone: 'heading' }),
