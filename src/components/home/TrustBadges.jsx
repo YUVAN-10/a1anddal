@@ -13,7 +13,7 @@ export default function TrustBadges() {
     <section className={styles.wrap}>
       <div className={`container ${styles.grid}`}>
         {BADGES.map((b) => (
-          <div className={styles.badge} key={b.title}>
+          <div className={`${styles.badge} animate-card`} key={b.title}>
             <span className={styles.icon}>{b.icon}</span>
             <div>
               <h4>{b.title}</h4>

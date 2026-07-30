@@ -9,12 +9,17 @@
   border-radius: var(--radius-lg);
   padding: 8px 20px 8px 8px;
   box-shadow: var(--shadow-soft);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform 0.25s ease;
+  animation: slideInSearch 0.65s ease-out both;
 }
 
 .wrap:focus-within {
   border-color: var(--color-primary);
   box-shadow: var(--shadow-hover);
+}
+
+.wrap:hover {
+  transform: translateY(-1px);
 }
 
 .iconBadge {
@@ -28,6 +33,11 @@
   background: var(--color-primary);
   color: var(--color-white);
   font-size: 0.95rem;
+  animation: pulseBadge 3.2s ease-in-out infinite 0.8s;
+}
+
+.wrap:hover .iconBadge {
+  transform: scale(1.08);
 }
 
 .wrap input {
@@ -37,4 +47,29 @@
   background: transparent;
   font-size: 0.95rem;
   color: var(--color-text);
+  transition: color 0.25s ease;
+}
+
+.wrap input:focus {
+  color: var(--color-heading);
+}
+
+@keyframes slideInSearch {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseBadge {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
 }

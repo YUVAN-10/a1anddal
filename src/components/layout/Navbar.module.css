@@ -13,7 +13,50 @@
   border-bottom-color: var(--color-border);
 }
 
+.flowerClip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.headerFlower {
+  position: absolute;
+  top: -36px;
+  right: -48px;
+  width: 200px;
+  height: 200px;
+  color: var(--color-accent);
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+  transform: rotate(-18deg);
+  transition: transform 300ms ease, opacity 300ms ease;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 1200px) {
+  .headerFlower {
+    width: 180px;
+    top: -22px;
+    right: -26px;
+    opacity: 0.85;
+  }
+}
+
+@media (max-width: 860px) {
+  .headerFlower {
+    width: 140px;
+    top: -12px;
+    right: -12px;
+    opacity: 0.55;
+  }
+}
+
 .inner {
+  position: relative;
+  z-index: 1;
   height: var(--header-height);
   display: flex;
   align-items: center;

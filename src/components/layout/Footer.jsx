@@ -132,7 +132,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className={styles.flowerBorder} aria-hidden="true" />
+      {/* removed decorative flowerBorder as requested */}
     </footer>
   )
 }

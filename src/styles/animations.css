@@ -18,6 +18,16 @@
   }
 }
 
+.animate-card {
+  animation: fadeInUp 0.65s ease both;
+  will-change: transform, opacity;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease;
+}
+
+.animate-card:hover {
+  transform: translateY(-6px);
+}
+
 @keyframes scaleIn {
   from {
     opacity: 0;
