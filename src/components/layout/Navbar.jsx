@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { FaBars, FaTimes, FaSearch } from 'react-icons/fa'
 import logo from '../../assets/logo-cropped.png'
+import TempleBell from '../common/TempleBell'
 import styles from './Navbar.module.css'
 
 const NAV_LINKS = [
@@ -10,46 +11,6 @@ const NAV_LINKS = [
   { to: '/about', label: 'About Us' },
   { to: '/contact', label: 'Contact Us' },
 ]
-
-function navPetalPath(radius, length, width) {
-  const tipX = radius + length
-  const shoulderX = radius + length * 0.72
-  const shoulderY = width * 0.55
-  return `M${radius},0
-          Q${radius + length * 0.28},${-width} ${shoulderX},${-shoulderY}
-          Q${tipX},0 ${shoulderX},${shoulderY}
-          Q${radius + length * 0.28},${width} ${radius},0 Z`
-}
-
-function NavPetal({ angle, radius, length, width }) {
-  return (
-    <g transform={`rotate(${-angle})`}>
-      <path d={navPetalPath(radius, length, width)} fill="currentColor" fillOpacity="0.55" />
-      <path d={navPetalPath(radius, length, width)} fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.8" />
-    </g>
-  )
-}
-
-const NAV_RING_OUTER = Array.from({ length: 12 }, (_, i) => i * 30)
-const NAV_RING_INNER = Array.from({ length: 6 }, (_, i) => i * 60 + 15)
-
-function NavMandala({ className }) {
-  return (
-    <svg className={className} viewBox="0 0 100 92" aria-hidden="true">
-      <g transform="translate(100, 46)" fill="none" stroke="currentColor">
-        <circle r="44" strokeWidth="0.6" opacity="0.35" />
-        <circle r="32" strokeWidth="0.6" opacity="0.4" />
-        <circle r="4" fill="currentColor" stroke="none" opacity="0.7" />
-        {NAV_RING_OUTER.map((a) => (
-          <NavPetal key={`o-${a}`} angle={a} radius={20} length={10} width={3} />
-        ))}
-        {NAV_RING_INNER.map((a) => (
-          <NavPetal key={`i-${a}`} angle={a} radius={7} length={7} width={2} />
-        ))}
-      </g>
-    </svg>
-  )
-}
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -73,9 +34,7 @@ export default function Navbar() {
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
-      <div className={styles.flowerClip} aria-hidden="true">
-        <NavMandala className={styles.headerFlower} />
-      </div>
+      <TempleBell className={styles.navBell} size={24} delay="2s" />
       <div className={`container ${styles.inner}`}>
         <NavLink to="/" className={styles.brand} onClick={() => setMenuOpen(false)}>
           <img src={logo} alt="A1 Anddal & Co" className={styles.logo} />

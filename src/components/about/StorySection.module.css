@@ -1,3 +1,13 @@
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.lotus {
+  bottom: -70px;
+  left: -60px;
+}
+
 .storyGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;

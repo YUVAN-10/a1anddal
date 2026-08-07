@@ -1,5 +1,7 @@
 body {
-  background: var(--color-section-bg);
+  /* extremely subtle warm gradient within the existing cream tone — not a palette change */
+  background: linear-gradient(165deg, #f2e7ce 0%, var(--color-section-bg) 45%, #ece0c2 100%);
+  background-attachment: fixed;
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: 15px;

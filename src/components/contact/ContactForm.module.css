@@ -59,25 +59,30 @@
 
 .submit {
   align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
   margin-top: var(--space-2);
   padding: 16px 38px;
-  border-radius: var(--radius-full);
   background: var(--color-heading);
   color: var(--color-white);
   font-size: 1rem;
-  font-weight: 600;
-  transition: background var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
+/* background/lift/shine/glow/ripple/focus-ring all come from the shared Button
+   component — this just keeps the brand-brown fill and darkens it on hover */
 .submit:hover {
   background: #4a3226;
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-1px);
 }
 
-.submit svg {
+.arrowIcon {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
   font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .submit:hover .arrowIcon {
+    transform: translateX(6px);
+  }
 }

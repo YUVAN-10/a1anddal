@@ -1,0 +1,51 @@
+.particleLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  top: var(--p-top);
+  left: var(--p-left);
+  width: var(--p-size);
+  height: var(--p-size);
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffe6b0 0%, #f0c064 55%, rgba(240, 192, 100, 0) 75%);
+  box-shadow: 0 0 6px 2px rgba(255, 199, 89, 0.45);
+  opacity: 0;
+  animation: particleFloat var(--p-duration) ease-in-out infinite;
+  animation-delay: var(--p-delay);
+  will-change: transform, opacity;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.1;
+  }
+  25% {
+    transform: translate(5px, -14px);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate(-4px, -26px);
+    opacity: 0.25;
+  }
+  75% {
+    transform: translate(7px, -12px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .particleLayer {
+    display: none;
+  }
+}

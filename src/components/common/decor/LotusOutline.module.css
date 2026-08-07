@@ -1,0 +1,33 @@
+.lotusWrap {
+  position: absolute;
+  color: #8d6385;
+  opacity: 0.035;
+  pointer-events: none;
+}
+
+.lotus {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* gentle up/down drift, base rotation stays fixed on the wrapper */
+  animation-name: lotusFloat;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  will-change: transform;
+}
+
+@keyframes lotusFloat {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 640px) {
+  .lotusWrap {
+    display: none;
+  }
+}

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FaUser, FaPhoneAlt, FaEnvelope, FaPencilAlt, FaArrowRight } from 'react-icons/fa'
+import Button from '../common/Button'
 import styles from './ContactForm.module.css'
 
 const EMPTY_FORM = { name: '', phone: '', email: '', message: '' }
@@ -79,9 +80,12 @@ export default function ContactForm() {
       </div>
       {errors.message && <span className={styles.error}>{errors.message}</span>}
 
-      <button type="submit" className={styles.submit}>
-        Send Message <FaArrowRight aria-hidden="true" />
-      </button>
+      <Button type="submit" className={styles.submit}>
+        Send Message
+        <span className={styles.arrowIcon} aria-hidden="true">
+          <FaArrowRight />
+        </span>
+      </Button>
     </form>
   )
 }

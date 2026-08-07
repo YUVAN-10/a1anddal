@@ -1,0 +1,26 @@
+.mandala {
+  position: absolute;
+  color: #d4af37;
+  opacity: 0.03;
+  pointer-events: none;
+  /* one full turn takes ~90 minutes — imperceptible frame to frame, alive over time */
+  animation-name: mandalaSpin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@keyframes mandalaSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .mandala {
+    display: none;
+  }
+}

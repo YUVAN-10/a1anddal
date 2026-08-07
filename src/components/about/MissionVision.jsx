@@ -1,9 +1,27 @@
 import { FaEye, FaBullseye } from 'react-icons/fa'
+import { motion, useReducedMotion } from 'framer-motion'
 import styles from './MissionVision.module.css'
 
 export default function MissionVision() {
+  const reduceMotion = useReducedMotion()
+
+  const sectionVariants = {
+    hidden: { opacity: 0, scale: reduceMotion ? 1 : 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: reduceMotion ? 0.01 : 0.8, ease: [0.22, 1, 0.36, 1] },
+    },
+  }
+
   return (
-    <section className="section section--tinted">
+    <motion.section
+      className="section section--tinted"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className={`container ${styles.mvGrid}`}>
         <div className={styles.mvCard}>
           <FaEye className={styles.mvIcon} aria-hidden="true" />
@@ -30,6 +48,6 @@ export default function MissionVision() {
           </p>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

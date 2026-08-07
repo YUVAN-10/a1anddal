@@ -1,0 +1,60 @@
+.sunRays {
+  position: absolute;
+  top: 50%;
+  left: 64%;
+  width: 900px;
+  height: 900px;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 214, 140, 0.16) 0deg,
+    rgba(255, 214, 140, 0) 22deg,
+    rgba(255, 214, 140, 0.13) 55deg,
+    rgba(255, 214, 140, 0) 80deg,
+    rgba(255, 214, 140, 0.15) 120deg,
+    rgba(255, 214, 140, 0) 150deg,
+    rgba(255, 214, 140, 0.1) 190deg,
+    rgba(255, 214, 140, 0) 220deg,
+    rgba(255, 214, 140, 0.14) 260deg,
+    rgba(255, 214, 140, 0) 300deg,
+    rgba(255, 214, 140, 0.16) 340deg,
+    rgba(255, 214, 140, 0) 360deg
+  );
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  opacity: 0.4;
+  z-index: 0;
+  pointer-events: none;
+  animation: sunRotate 100s linear infinite, sunPulse 9s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes sunRotate {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes sunPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 640px) {
+  .sunRays {
+    width: 560px;
+    height: 560px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sunRays {
+    animation: none;
+    opacity: 0.35;
+  }
+}

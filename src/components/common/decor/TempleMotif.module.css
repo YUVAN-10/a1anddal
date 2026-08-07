@@ -1,0 +1,27 @@
+.temple {
+  position: absolute;
+  color: #b68d40;
+  opacity: 0.03;
+  pointer-events: none;
+  animation-name: templePulse;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: opacity;
+}
+
+/* barely-there breathing, never a hard fade */
+@keyframes templePulse {
+  0%,
+  100% {
+    opacity: 0.022;
+  }
+  50% {
+    opacity: 0.04;
+  }
+}
+
+@media (max-width: 640px) {
+  .temple {
+    display: none;
+  }
+}

@@ -1,0 +1,12 @@
+.floral {
+  position: absolute;
+  color: #da6dda;
+  opacity: 0.035;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .floral {
+    display: none;
+  }
+}

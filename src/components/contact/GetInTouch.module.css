@@ -1,5 +1,12 @@
 .section {
+  position: relative;
+  overflow: hidden;
   background: var(--color-section-bg);
+}
+
+.floral {
+  bottom: -20px;
+  right: -30px;
 }
 
 .layout {

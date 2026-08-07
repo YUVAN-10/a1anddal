@@ -1,3 +1,13 @@
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.mandala {
+  top: -140px;
+  right: -160px;
+}
+
 .valuesGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -79,5 +89,11 @@
 @media (max-width: 860px) {
   .valuesGrid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .valueCard {
+    border: 1px solid rgba(34, 26, 24, 0.12);
   }
 }

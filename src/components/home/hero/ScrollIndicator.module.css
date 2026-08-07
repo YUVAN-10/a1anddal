@@ -1,0 +1,92 @@
+.scrollIndicator {
+  position: absolute;
+  left: 50%;
+  bottom: 62px;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.85;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-50%) translateY(8px);
+}
+
+.mouse {
+  width: 22px;
+  height: 36px;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  position: relative;
+}
+
+.wheel {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 3px;
+  height: 6px;
+  border-radius: 2px;
+  background: #ffe3ba;
+  transform: translateX(-50%);
+  animation: scrollWheel 1.8s ease-in-out infinite;
+}
+
+.arrow {
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.7);
+  transform: rotate(45deg);
+  animation: scrollArrow 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollWheel {
+  0% {
+    opacity: 1;
+    top: 6px;
+  }
+  60% {
+    opacity: 0.2;
+    top: 18px;
+  }
+  61% {
+    opacity: 0;
+    top: 6px;
+  }
+  100% {
+    opacity: 0;
+    top: 6px;
+  }
+}
+
+@keyframes scrollArrow {
+  0%,
+  100% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: rotate(45deg) translate(3px, 3px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .scrollIndicator {
+    bottom: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wheel,
+  .arrow {
+    animation: none;
+  }
+}

@@ -1,6 +1,9 @@
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { motion, useReducedMotion } from 'framer-motion'
 import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa'
 import logo from '../../assets/logo-cropped.png'
+import Mandala from '../common/decor/Mandala'
 import styles from './Footer.module.css'
 
 function petalPath(radius, length, width) {
@@ -80,59 +83,133 @@ function MandalaCorner({ className }) {
   )
 }
 
+// Footer link with an arrow that slides in on hover/focus — used for both link columns
+function FooterLink({ to, children }) {
+  return (
+    <Link to={to}>
+      {children}
+      <span className={styles.linkArrow} aria-hidden="true">
+        &rarr;
+      </span>
+    </Link>
+  )
+}
+
+// Social icon with a click ripple; hover glow/scale/rotate live entirely in CSS
+function SocialIcon({ href, label, children }) {
+  const [ripples, setRipples] = useState([])
+  const rippleId = useRef(0)
+
+  const handleClick = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const id = rippleId.current++
+    const ripple = { id, x: e.clientX - rect.left, y: e.clientY - rect.top }
+    setRipples((prev) => [...prev, ripple])
+    setTimeout(() => {
+      setRipples((prev) => prev.filter((r) => r.id !== id))
+    }, 550)
+  }
+
+  return (
+    <a href={href} target="_blank" rel="noreferrer" aria-label={label} className={styles.socialLink} onClick={handleClick}>
+      {children}
+      {ripples.map((r) => (
+        <span key={r.id} className={styles.socialRipple} style={{ left: r.x, top: r.y }} />
+      ))}
+    </a>
+  )
+}
+
 export default function Footer() {
+  const reduceMotion = useReducedMotion()
+
+  const columnVariants = {
+    hidden: { opacity: 0, y: reduceMotion ? 0 : 24 },
+    visible: { opacity: 1, y: 0, transition: { duration: reduceMotion ? 0.01 : 0.65, ease: [0.22, 1, 0.36, 1] } },
+  }
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: reduceMotion ? 0 : 0.14, delayChildren: reduceMotion ? 0 : 0.05 },
+    },
+  }
+
   return (
     <footer className={styles.footer}>
       <div className={styles.scallop} aria-hidden="true" />
       <MandalaCorner className={styles.cornerLeft} />
       <MandalaCorner className={styles.cornerRight} />
+      <Mandala className={styles.ambientMandala} size={640} color="var(--color-accent)" duration={7200} />
 
-      <div className={`container ${styles.grid}`}>
-        <div className={styles.about}>
+      <motion.div
+        className={`container ${styles.grid}`}
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.div className={styles.about} variants={columnVariants}>
           <Link to="/" className={styles.brand}>
             <img src={logo} alt="A1 Anddal & Co" className={styles.logo} />
           </Link>
-         
-        </div>
+        </motion.div>
 
-        <div className={styles.col}>
+        <motion.div className={styles.col} variants={columnVariants}>
           <h4>Quick Links</h4>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/products">Products</Link></li>
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/contact">Contact Us</Link></li>
+            <li><FooterLink to="/">Home</FooterLink></li>
+            <li><FooterLink to="/products">Products</FooterLink></li>
+            <li><FooterLink to="/about">About Us</FooterLink></li>
+            <li><FooterLink to="/contact">Contact Us</FooterLink></li>
           </ul>
-        </div>
+        </motion.div>
 
-        <div className={styles.col}>
+        <motion.div className={styles.col} variants={columnVariants}>
           <h4>Products</h4>
           <ul>
-            <li><Link to="/products">Incense Sticks</Link></li>
-            <li><Link to="/products">Sambirani Cups</Link></li>
-            <li><Link to="/products">Dhoop Cones</Link></li>
-            <li><Link to="/products">Pooja Essentials</Link></li>
-            <li><Link to="/products">Others</Link></li>
+            <li><FooterLink to="/products">Incense Sticks</FooterLink></li>
+            <li><FooterLink to="/products">Sambirani Cups</FooterLink></li>
+            <li><FooterLink to="/products">Dhoop Cones</FooterLink></li>
+            <li><FooterLink to="/products">Pooja Essentials</FooterLink></li>
+            <li><FooterLink to="/products">Others</FooterLink></li>
           </ul>
-        </div>
+        </motion.div>
 
-        <div className={`${styles.col} ${styles.colFollow}`}>
+        <motion.div className={`${styles.col} ${styles.colFollow}`} variants={columnVariants}>
           <h4>Follow Us</h4>
           <div className={styles.social}>
-            <a href="https://www.facebook.com/share/14n5uKMjSUk/" target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebookF /></a>
-            <a href="https://www.instagram.com/a1anddalerode" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
-            <a href="https://youtube.com/@a1anddaldivineproducts" target="_blank" rel="noreferrer" aria-label="YouTube"><FaYoutube /></a>
+            <SocialIcon href="https://www.facebook.com/share/14n5uKMjSUk/" label="Facebook">
+              <FaFacebookF />
+            </SocialIcon>
+            <SocialIcon href="https://www.instagram.com/a1anddalerode" label="Instagram">
+              <FaInstagram />
+            </SocialIcon>
+            <SocialIcon href="https://youtube.com/@a1anddaldivineproducts" label="YouTube">
+              <FaYoutube />
+            </SocialIcon>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       <div className={styles.bottom}>
-        <div className="container">
+        <motion.span
+          className={styles.divider}
+          initial={{ scaleX: reduceMotion ? 1 : 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: reduceMotion ? 0.01 : 1, ease: 'easeOut' }}
+        />
+        <motion.div
+          className="container"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: reduceMotion ? 0.01 : 0.7, delay: reduceMotion ? 0 : 0.25 }}
+        >
           <p>© {new Date().getFullYear()} A1 Andaal Pooja Products. All Rights Reserved.</p>
-        </div>
+        </motion.div>
       </div>
-
-      {/* removed decorative flowerBorder as requested */}
     </footer>
   )
 }

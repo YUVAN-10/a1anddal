@@ -1,3 +1,13 @@
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.lotus {
+  top: -60px;
+  right: -50px;
+}
+
 .wrap {
   max-width: 680px;
   text-align: center;

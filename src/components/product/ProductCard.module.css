@@ -1,21 +1,21 @@
 .card {
+  position: relative;
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  transition: box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1), transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
   box-shadow: 0 6px 14px rgba(34, 26, 24, 0.5);
-  opacity: 0;
-  transform: translateY(18px);
-  animation: floatIn 0.72s ease-out forwards;
+  will-change: transform;
 }
 
-.card:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-8px) scale(1.01);
+/* quick tap feedback for touch devices (no hover capability) */
+.card:active {
+  transform: scale(0.98);
 }
 
 .imageWrap {
@@ -29,19 +29,15 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.45s ease, filter 0.45s ease;
+  transition: transform 0.6s ease;
   will-change: transform;
-}
-
-.card:hover .imageWrap img {
-  transform: scale(1.08) rotate(0.35deg);
-  filter: saturate(1.08);
 }
 
 .outOfStock {
   position: absolute;
   bottom: 12px;
   left: 12px;
+  z-index: 3;
   background: rgba(93, 64, 55, 0.85);
   color: var(--color-white);
   font-size: 0.7rem;
@@ -50,7 +46,73 @@
   border-radius: var(--radius-full);
 }
 
+/* --- incense smoke wisps (hover-only) --- */
+.smokeLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.smokeWisp,
+.smokeWisp2 {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 75%);
+  filter: blur(6px);
+  opacity: 0;
+}
+
+.smokeWisp {
+  left: 42%;
+  width: 26px;
+  height: 90px;
+}
+
+.smokeWisp2 {
+  left: 56%;
+  width: 18px;
+  height: 66px;
+}
+
+/* --- diagonal shine sweep (hover-only, plays once) --- */
+.shine {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0) 32%,
+    rgba(255, 246, 224, 0.55) 48%,
+    rgba(255, 255, 255, 0) 64%
+  );
+  transform: translateX(-140%) skewX(-18deg);
+}
+
+/* --- tiny golden light particles (hover-only) --- */
+.particleLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffe6b0 0%, #f0c064 55%, rgba(240, 192, 100, 0) 75%);
+  box-shadow: 0 0 5px 1px rgba(255, 199, 89, 0.55);
+  opacity: 0;
+}
+
 .body {
+  position: relative;
+  z-index: 1;
   padding: var(--space-3);
   display: flex;
   flex-direction: column;
@@ -67,24 +129,158 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
 .price {
   font-weight: 700;
   color: var(--color-heading);
   font-size: 0.88rem;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.ctaWrap {
+  position: relative;
+  margin-top: 6px;
+  transition: transform 0.3s ease;
 }
 
 .viewDetails {
-  color:white ;
-  margin-top: 6px;
+  color: white;
   background-color: #dc6820;
+  border-color: transparent;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
 }
 
-@keyframes floatIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+.btnArrow {
+  display: inline-block;
+  margin-left: 4px;
+  transition: transform 0.3s ease;
+}
+
+@keyframes smokeRiseA {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.3;
+  }
+  55% {
+    transform: translateY(-55%) translateX(-6px) scale(1.05);
+    opacity: 0.18;
+  }
+  100% {
+    transform: translateY(-100%) translateX(6px) scale(1.3);
+    opacity: 0;
   }
 }
 
+@keyframes smokeRiseB {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.24;
+  }
+  60% {
+    transform: translateY(-50%) translateX(6px) scale(1);
+    opacity: 0.14;
+  }
+  100% {
+    transform: translateY(-95%) translateX(-5px) scale(1.25);
+    opacity: 0;
+  }
+}
+
+@keyframes cardShineSweep {
+  to {
+    transform: translateX(140%) skewX(-18deg);
+  }
+}
+
+@keyframes cardParticleFloat {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.55;
+  }
+  60% {
+    transform: translate(4px, -16px);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate(-3px, -26px);
+    opacity: 0;
+  }
+}
+
+/* Elaborate hover choreography — only for devices with real hover (mouse/trackpad).
+   Touch devices get the lighter :active feedback above instead. */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover,
+  .card:focus-within {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(201, 162, 39, 0.55);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(201, 162, 39, 0.3),
+      0 0 26px rgba(201, 162, 39, 0.25);
+  }
+
+  .card:hover .imageWrap img,
+  .card:focus-within .imageWrap img {
+    transform: scale(1.08);
+  }
+
+  .card:hover .smokeWisp,
+  .card:focus-within .smokeWisp {
+    animation: smokeRiseA 3.2s ease-in-out infinite;
+  }
+
+  .card:hover .smokeWisp2,
+  .card:focus-within .smokeWisp2 {
+    animation: smokeRiseB 3.8s ease-in-out infinite 0.6s;
+  }
+
+  .card:hover .shine,
+  .card:focus-within .shine {
+    animation: cardShineSweep 0.7s ease forwards;
+  }
+
+  .card:hover .particle,
+  .card:focus-within .particle {
+    animation: cardParticleFloat 2.4s ease-out infinite;
+  }
+
+  .card:hover .name,
+  .card:focus-within .name {
+    color: #8a5a17;
+  }
+
+  .card:hover .price,
+  .card:focus-within .price {
+    color: var(--color-accent);
+  }
+
+  .card:hover .ctaWrap,
+  .card:focus-within .ctaWrap {
+    transform: translateY(-2px);
+  }
+
+  /* transform/filter here are intentionally left to the shared Button component
+     (.btn:hover), which wins on specificity — this just adds border/shadow */
+  .viewDetails:hover,
+  .viewDetails:focus-visible {
+    border-color: var(--color-accent);
+    box-shadow: 0 10px 22px rgba(201, 162, 39, 0.32);
+  }
+
+  .viewDetails:hover .btnArrow,
+  .viewDetails:focus-visible .btnArrow {
+    transform: translateX(8px);
+  }
+}

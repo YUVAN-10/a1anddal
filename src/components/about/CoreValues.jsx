@@ -1,5 +1,6 @@
 import { GiLotus, GiPrayerBeads, GiHerbsBundle } from 'react-icons/gi'
 import { FaHandHoldingHeart } from 'react-icons/fa'
+import Mandala from '../common/decor/Mandala'
 import styles from './CoreValues.module.css'
 
 const VALUES = [
@@ -11,7 +12,8 @@ const VALUES = [
 
 export default function CoreValues() {
   return (
-    <section className="section section--tinted">
+    <section className={`section section--tinted ${styles.section}`}>
+      <Mandala className={styles.mandala} size={520} />
       <div className="container">
         <div className="section-heading">
           <span className="eyebrow">What We Stand For</span>

@@ -1,9 +1,12 @@
+import { motion, useReducedMotion } from 'framer-motion'
 import ProductCard from './ProductCard'
 import EmptyState from '../common/EmptyState'
 import { FaBoxOpen } from 'react-icons/fa'
 import styles from './ProductGrid.module.css'
 
 export default function ProductGrid({ products }) {
+  const reduceMotion = useReducedMotion()
+
   if (!products.length) {
     return (
       <EmptyState
@@ -14,11 +17,31 @@ export default function ProductGrid({ products }) {
     )
   }
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: reduceMotion ? 0 : 0.1 },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: reduceMotion ? 0 : 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: reduceMotion ? 0.01 : 0.55, ease: 'easeOut' } },
+  }
+
   return (
-    <div className={styles.grid}>
+    <motion.div
+      className={styles.grid}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.15 }}
+    >
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <motion.div key={product.id} className={styles.cardSlot} variants={itemVariants}>
+          <ProductCard product={product} />
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   )
 }
