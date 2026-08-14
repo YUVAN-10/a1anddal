@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { FaBars, FaTimes, FaSearch } from 'react-icons/fa'
 import logo from '../../assets/logo-cropped.png'
-import TempleBell from '../common/TempleBell'
 import styles from './Navbar.module.css'
 
 const NAV_LINKS = [
@@ -27,14 +26,12 @@ export default function Navbar() {
 
   function handleSearchSubmit(e) {
     e.preventDefault()
-    const q = new FormData(e.target).get('q')
-    navigate(q ? `/products?search=${encodeURIComponent(q)}` : '/products')
+    navigate('/products')
     setMenuOpen(false)
   }
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
-      <TempleBell className={styles.navBell} size={24} delay="2s" />
       <div className={`container ${styles.inner}`}>
         <NavLink to="/" className={styles.brand} onClick={() => setMenuOpen(false)}>
           <img src={logo} alt="A1 Anddal & Co" className={styles.logo} />
@@ -59,9 +56,6 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.actions}>
-          <NavLink to="/products?search=" className={styles.iconBtn} aria-label="Search products">
-            <FaSearch />
-          </NavLink>
           <button
             className={styles.menuToggle}
             onClick={() => setMenuOpen((v) => !v)}

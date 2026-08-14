@@ -27,24 +27,40 @@ export default function MissionVision() {
           <FaEye className={styles.mvIcon} aria-hidden="true" />
           <h3>Our Vision</h3>
           <p>
-            To become one of India's most trusted and respected manufacturers of incense and sambrani products by
-            delivering premium-quality products that represent purity, authenticity, and tradition.
+            Our vision is to become one of the most trusted and respected names in the incense and sambrani industry
+            by delivering products that reflect purity, quality, and tradition. We aim to bring the timeless essence
+            of authentic fragrances into every home, creating an atmosphere of peace, positivity, and spiritual
+            well-being.
           </p>
           <p>
-            We strive to preserve India's spiritual heritage while continuously innovating and introducing
-            long-lasting fragrances that create a peaceful atmosphere for every home.
+            We aspire to preserve India's rich cultural and devotional heritage by crafting aromatic products that
+            enhance daily prayers, meditation, festivals, and special occasions. Through our commitment to
+            excellence, we strive to keep traditional practices alive while meeting the expectations of modern
+            consumers.
+          </p>
+          <p>
+            Innovation and quality are at the heart of our vision. We continuously work to improve our products by
+            selecting premium ingredients, maintaining high manufacturing standards, and introducing fragrances that
+            provide a long-lasting and refreshing experience for our customers.
           </p>
         </div>
         <div className={styles.mvCard}>
           <FaBullseye className={styles.mvIcon} aria-hidden="true" />
           <h3>Our Mission</h3>
           <p>
-            To manufacture high-quality incense, sambrani, dhuna dhoops, camphor, and aromatic products using
-            carefully selected ingredients and proven manufacturing practices.
+            Our mission is to manufacture high-quality incense, sambrani, dhoops, and aromatic products using
+            carefully selected ingredients and proven manufacturing practices. We are committed to delivering
+            products that offer purity, consistency, and a long-lasting fragrance experience.
           </p>
           <p>
-            We are committed to delivering products that provide purity, consistency, long-lasting fragrance, and a
-            truly spiritual experience while maintaining the highest quality standards.
+            We strive to preserve the rich heritage of traditional aromatic practices while embracing modern quality
+            standards and innovation. By combining time-honored methods with advanced production techniques, we
+            ensure that every product reflects authenticity and excellence.
+          </p>
+          <p>
+            We are dedicated to offering a diverse range of fragrances that inspire devotion, inner peace, and
+            positive energy. Our products are thoughtfully crafted to enhance daily prayers, meditation, spiritual
+            rituals, and create a calm and welcoming atmosphere in every home.
           </p>
         </div>
       </div>

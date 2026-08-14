@@ -25,11 +25,3 @@
   margin-bottom: var(--space-5);
 }
 
-.link {
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
-.link:hover {
-  text-decoration: underline;
-}

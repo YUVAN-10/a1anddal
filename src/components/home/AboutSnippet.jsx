@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
+import Button from '../common/Button'
 import LotusOutline from '../common/decor/LotusOutline'
 import styles from './AboutSnippet.module.css'
 
@@ -39,9 +39,9 @@ export default function AboutSnippet() {
           methods.
         </motion.p>
         <motion.div variants={itemVariants}>
-          <Link to="/about" className={styles.link}>
+          <Button to="/about" variant="primary">
             Learn More About Us →
-          </Link>
+          </Button>
         </motion.div>
       </motion.div>
     </section>

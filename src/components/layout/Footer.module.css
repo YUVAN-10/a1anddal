@@ -98,16 +98,6 @@
   border-left: none;
 }
 
-.colFollow::before {
-  content: '✥';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--color-accent);
-  font-size: 1rem;
-}
-
 .social {
   display: flex;
   gap: var(--space-3);
@@ -280,10 +270,6 @@
   .colFollow {
     border-left: none;
     padding-left: 0;
-  }
-
-  .colFollow::before {
-    display: none;
   }
 
   .social {

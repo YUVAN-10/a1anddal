@@ -1,4 +1,4 @@
-import heroImage from '../../assets/page-hero-banner.png'
+import heroImage from '../../assets/temple-hero.png'
 import TempleBell from './TempleBell'
 import styles from './PageHero.module.css'
 

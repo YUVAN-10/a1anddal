@@ -1,7 +1,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
+  gap: var(--space-4);
 }
 
 .item {
@@ -11,11 +11,11 @@
   text-align: center;
   gap: var(--space-3);
   padding: var(--space-5) var(--space-4);
-  border-right: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  background: rgba(255, 255, 255, 0.24);
-  backdrop-filter: blur(8px);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background: var(--color-white);
+  box-shadow: 0 6px 18px rgba(48, 37, 19, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease, border-color 0.35s ease;
   transform: translateY(24px);
   opacity: 0;
   animation: revealItem 0.55s ease forwards;
@@ -26,18 +26,16 @@
   opacity: 1;
 }
 
-.item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 50px rgba(48, 37, 19, 0.12);
-  background: rgba(255, 255, 255, 0.92);
+.item:active {
+  transform: scale(0.98);
 }
 
-.item:nth-child(4n) {
-  border-right: none;
-}
-
-.item:nth-last-child(-n + 4) {
-  border-bottom: none;
+@media (hover: hover) and (pointer: fine) {
+  .item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 50px rgba(48, 37, 19, 0.16);
+    border-color: rgba(201, 162, 39, 0.4);
+  }
 }
 
 .icon {
@@ -59,39 +57,14 @@
 @media (max-width: 860px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .item {
-    border-right-color: rgba(93, 64, 55, 0.35);
-    border-bottom-color: rgba(93, 64, 55, 0.35);
-  }
-
-  .item:hover {
-    transform: none;
-    box-shadow: none;
-    background: rgba(255, 255, 255, 0.24);
-  }
-
-  .item:nth-child(4n) {
-    border-right: 1px solid rgba(93, 64, 55, 0.35);
-  }
-
-  .item:nth-child(2n) {
-    border-right: none;
-  }
-
-  .item:nth-last-child(-n + 4) {
-    border-bottom: 1px solid rgba(93, 64, 55, 0.35);
-  }
-
-  .item:nth-last-child(-n + 2) {
-    border-bottom: none;
+    gap: var(--space-3);
   }
 }
 
 @media (max-width: 520px) {
   .item {
     padding: var(--space-4) var(--space-2);
+    border-radius: 14px;
   }
 
   .icon {

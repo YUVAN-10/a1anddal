@@ -50,7 +50,7 @@ export default function ProductCard({ product }) {
         <span className={styles.price}>{formatStartingPrice(product)}</span>
 
         <div className={styles.ctaWrap}>
-          <Button to={`/products/${product.slug}`} variant="outline" size="sm" fullWidth className={styles.viewDetails}>
+          <Button to={`/products/${product.slug}`} variant="outline" size="sm" className={styles.viewDetails}>
             View Details
             <span className={styles.btnArrow} aria-hidden="true">
               &rarr;

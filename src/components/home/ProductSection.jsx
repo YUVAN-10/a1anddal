@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import CollectionImageCard from './CollectionImageCard'
+import Button from '../common/Button'
 import TempleMotif from '../common/decor/TempleMotif'
 import styles from './ProductSection.module.css'
 
@@ -45,7 +45,9 @@ export default function ProductSection({ eyebrow, title, subtitle, products, tin
         </motion.div>
         {viewAllLink && (
           <div className={styles.viewAll}>
-            <Link to={viewAllLink}>View All →</Link>
+            <Button to={viewAllLink} variant={tinted ? 'secondary' : 'primary'}>
+              View All →
+            </Button>
           </div>
         )}
       </div>

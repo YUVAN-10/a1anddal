@@ -2,12 +2,12 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1810 / 869;
-  max-height: 420px;
+  max-height: 480px;
   min-height: 220px;
   display: flex;
   align-items: center;
-  background-color: #1c110a;
-  background-size: cover;
+  background-color: #e9c896;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -16,7 +16,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.55) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.45) 100%);
 }
 
 .bellLeft,
@@ -54,8 +54,9 @@
 
 @media (max-width: 640px) {
   .hero {
-    aspect-ratio: 4 / 5;
-    max-height: 320px;
+    aspect-ratio: 16 / 9;
+    max-height: 360px;
+    background-position: center;
   }
 
   .bellLeft,

@@ -10,8 +10,15 @@ import brand19LobanStick1 from '../../assets/products/19-brand-loban-candy-stick
 import sathuragiriKattiSambrani1 from '../../assets/products/sathuragiri-katti-sambrani-1.jpg'
 import aalayaaDasangam1 from '../../assets/products/aalayaa-dasangam-plain-cup-1.jpg'
 import a1PalSambrani1 from '../../assets/products/a1-pal-sambrani-1.jpg'
+import a1PalSambrani2 from '../../assets/products/a1-pal-sambrani-2.jpg'
 import jyothiDhunaDhoops1 from '../../assets/products/jyothi-dhuna-dhoops-1.jpg'
 import kanthrishtiPowder1 from '../../assets/products/kanthrishti-sambrani-powder-1.jpg'
+import singaporeCupSmallSandal1 from '../../assets/products/singapore-cup-sambrani-small-jar-sandal-1.png'
+import singaporeCupBigSandal1 from '../../assets/products/singapore-cup-sambrani-big-jar-sandal-1.png'
+import singaporeCupBigBlack1 from '../../assets/products/singapore-cup-sambrani-big-jar-black-1.png'
+import singaporeCupJumbo1 from '../../assets/products/singapore-cup-sambrani-jumbo-jar-1.png'
+import cupSambraniPouchPacking1 from '../../assets/products/cup-sambrani-pouch-packing-sandal-black-1.png'
+import pachaKarpooram1 from '../../assets/products/pacha-karpooram-natural-camphor-1.png'
 
 function imagesFor(name) {
   return [
@@ -132,7 +139,7 @@ export const products = [
     isBestSeller: true,
     tags: ['sambrani', 'cup', 'pal'],
     description: 'A1 Pal Sambrani — Crafted using Ven Kungiliyam, Rojanam and traditional aromatic ingredients for a pure pooja experience.',
-    images: [a1PalSambrani1],
+    images: [a1PalSambrani1, a1PalSambrani2],
   }),
   product({
     id: 'prod-jyothi-dhuna-dhoops',
@@ -206,6 +213,7 @@ export const products = [
     tags: ['sambrani', 'jar', 'sandal'],
     description:
       'Singapore Cup Sambrani Small Jar (Sandal) — Premium Thalampoo fragrance in sandal cup with Singapore sambrani filling for a long-lasting divine aroma.',
+    images: [singaporeCupSmallSandal1],
   }),
   product({
     id: 'prod-singapore-cup-big-jar-sandal',
@@ -225,6 +233,7 @@ export const products = [
     tags: ['sambrani', 'jar', 'sandal'],
     description:
       'Singapore Cup Sambrani Big Jar (Sandal) — Premium Thalampoo fragrance in sandal cup with Singapore sambrani filling for a long-lasting divine aroma.',
+    images: [singaporeCupBigSandal1],
   }),
   product({
     id: 'prod-singapore-cup-big-jar-black',
@@ -243,6 +252,7 @@ export const products = [
     tags: ['sambrani', 'jar', 'black'],
     description:
       'Singapore Cup Sambrani Big Jar (Black) — Premium Thalampoo fragrance in black cup with Singapore sambrani filling — long-lasting divine aroma.',
+    images: [singaporeCupBigBlack1],
   }),
   product({
     id: 'prod-singapore-cup-jumbo-jar',
@@ -261,6 +271,7 @@ export const products = [
     isFeatured: true,
     tags: ['sambrani', 'jar', 'jumbo'],
     description: 'Singapore Cup Sambrani Jumbo Jar — Experience a rich, long-lasting fragrance that creates a peaceful and divine atmosphere every day.',
+    images: [singaporeCupJumbo1],
   }),
   product({
     id: 'prod-cup-sambrani-pouch-packing',
@@ -282,6 +293,7 @@ export const products = [
     tags: ['sambrani', 'pouch'],
     description:
       'Cup Sambrani Pouch Packing (Sandal and Black) — A perfect blend of Sandal fragrance in the Sandal Cup and Loban fragrance in the Black Cup creates a soothing, long-lasting aroma for daily prayers and a peaceful home.',
+    images: [cupSambraniPouchPacking1],
   }),
   product({
     id: 'prod-saravanabhava-agarbathi-jar',
@@ -382,5 +394,6 @@ export const products = [
     isBestSeller: true,
     tags: ['camphor', 'karpooram'],
     description: 'Pacha Karpooram with a refreshing natural aroma, ideal for pooja, aarthi, and creating a positive, peaceful atmosphere at home.',
+    images: [pachaKarpooram1],
   }),
 ]

@@ -57,12 +57,22 @@ export default function StorySection() {
             Crafting Divine Fragrance, One Stick at a Time
           </motion.h2>
           <motion.p variants={itemVariants}>
-            A1 Anddal & Co. is dedicated to bringing purity, tradition, and divine fragrance into every home. We manufacture premium incense and pooja products that create a peaceful and spiritually uplifting atmosphere for daily prayers, meditation, temples, and home wellness.
+            A1 Anddal & Co is dedicated to bringing purity, tradition, and divine fragrance into every home. With a
+            wide range of premium sambrani cups, dhoops, incense cones, loban sticks, and aromatic products, we
+            strive to create a peaceful and spiritually uplifting atmosphere for daily prayers, meditation, and home
+            wellness.
           </motion.p>
           <motion.p variants={itemVariants}>
-           Crafted using carefully selected natural ingredients and traditional methods, our products are known for their rich aroma, long-lasting fragrance, and superior quality. Every product reflects our commitment to preserving Indian traditions while delivering an authentic aromatic experience.
-
-Our product range includes premium sambrani cups, dhuna dhoops, incense cones, loban sticks, sambrani powder, camphor, and aromatic products designed to fill every space with positive energy. Every fragrance is thoughtfully created to inspire devotion, serenity, and inner peace.
+            Crafted using carefully selected natural ingredients and traditional methods, our products are known for
+            their rich aroma, long-lasting fragrance, and superior quality. Every product reflects our commitment to
+            preserving Indian traditions while delivering an authentic aromatic experience for every household.
+          </motion.p>
+          <motion.p variants={itemVariants}>
+            Our collection features premium-quality sambrani cups, dhoops, incense cones, loban sticks, and aromatic
+            products crafted to fill your surroundings with divine fragrance and positive energy. Designed for daily
+            pooja, meditation, temples and homes, each product offers a slow-burning, long-lasting aroma that creates
+            a calm, refreshing, and spiritually uplifting atmosphere. With carefully chosen natural ingredients and
+            traditional craftsmanship, our products bring purity, devotion and serenity into every moment.
           </motion.p>
         </motion.div>
       </div>

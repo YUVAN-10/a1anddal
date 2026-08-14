@@ -19,11 +19,6 @@
   margin-top: var(--space-6);
 }
 
-.viewAll a {
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
 .dark {
   position: relative;
   background-color: #17130f;
@@ -40,10 +35,6 @@
 
 .darkHeading :global(p) {
   color: #c9b8ae;
-}
-
-.dark .viewAll a {
-  color: var(--color-accent);
 }
 
 @media (max-width: 1080px) {

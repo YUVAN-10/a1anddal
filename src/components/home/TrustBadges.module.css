@@ -14,15 +14,25 @@
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-4);
-  border-radius: var(--radius-xl);
-  background: rgba(255, 255, 255, 0.06);
-  transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease;
+  border-radius: 20px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(34, 26, 24, 0.06);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease, border-color 0.28s ease;
 }
 
-.badge:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 18px 40px rgba(34, 26, 24, 0.1);
+/* quick tap feedback for touch devices (no hover capability) */
+.badge:active {
+  transform: scale(0.98);
+}
+
+/* real hover/pointer devices only — touch devices keep the card look above without needing hover */
+@media (hover: hover) and (pointer: fine) {
+  .badge:hover {
+    transform: translateY(-4px);
+    border-color: rgba(201, 162, 39, 0.4);
+    box-shadow: 0 18px 40px rgba(34, 26, 24, 0.14);
+  }
 }
 
 .badge:nth-child(1) {
@@ -55,9 +65,11 @@
   transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
-.badge:hover .icon {
-  transform: scale(1.1);
-  box-shadow: 0 10px 24px rgba(34, 26, 24, 0.16);
+@media (hover: hover) and (pointer: fine) {
+  .badge:hover .icon {
+    transform: scale(1.1);
+    box-shadow: 0 10px 24px rgba(34, 26, 24, 0.16);
+  }
 }
 
 .badge h4 {
