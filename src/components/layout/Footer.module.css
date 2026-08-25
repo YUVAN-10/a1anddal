@@ -275,4 +275,8 @@
   .social {
     justify-content: center;
   }
+
+  .footer ul {
+    align-items: center;
+  }
 }

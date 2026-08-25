@@ -5,15 +5,15 @@
 .hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 1000 / 480;
-  max-height: 480px;
-  min-height: 220px;
+  aspect-ratio: 1600 / 401;
   display: flex;
   align-items: center;
   overflow: hidden;
   color: var(--color-white);
   background: #FFF8E7;
 }
+
+
 
 /* Background wrapper */
 .slideWrap {
@@ -171,11 +171,6 @@
 ========================================== */
 
 @media (max-width: 1024px) {
-  .hero {
-    aspect-ratio: 1000 / 480;
-    max-height: 400px;
-  }
-
   .content {
     max-width: 560px;
   }
@@ -186,11 +181,6 @@
 ========================================== */
 
 @media (max-width: 768px) {
-  .hero {
-    aspect-ratio: 1000 / 480;
-    max-height: 360px;
-  }
-
   .slideWrap {
     inset: 0;
     overflow: hidden;
@@ -235,11 +225,6 @@
 ========================================== */
 
 @media (max-width: 480px) {
-  .hero {
-    aspect-ratio: 16 / 9;
-    max-height: 300px;
-  }
-
   .content h1 {
     font-size: 1.6rem;
   }
