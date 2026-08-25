@@ -27,7 +27,13 @@ export default function Home() {
 
   return (
     <>
-      <Hero banners={banners} />
+      <>
+        <Hero banners={banners} />
+
+        <section className="container">
+          {/* Rest of your homepage */}
+        </section>
+      </>
       <AboutSnippet />
       <TrustBadges />
       <CategoryGrid categories={categories} />

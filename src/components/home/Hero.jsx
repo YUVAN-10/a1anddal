@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import Button from '../common/Button'
 import TempleBell from '../common/TempleBell'
@@ -61,80 +60,28 @@ function HeroCTAButton({ to, ctaLabel }) {
 }
 
 export default function Hero({ banners }) {
-  const [active, setActive] = useState(0)
   const textVariants = useHeroTextVariants()
 
-  useEffect(() => {
-    if (banners.length < 2) return
-    const id = setInterval(() => setActive((i) => (i + 1) % banners.length), 6000)
-    return () => clearInterval(id)
-  }, [banners.length])
-
   if (!banners.length) return null
-  const banner = banners[active]
+  const banner = banners[0]
 
   return (
     <section className={styles.hero}>
       <div className={styles.slideWrap}>
-        {banners.map((b, i) => (
-          <img
-            key={b.id}
-            src={b.image}
-            alt=""
-            className={`${styles.bgImage} ${i === active ? styles.bgActive : ''}`}
-          />
-        ))}
-        <SunRays />
-        {!banner.imageOnly && <div className={styles.overlay} />}
+        <div
+          className={styles.bgImage}
+          style={{
+            backgroundImage: `url(${banner.image})`,
+            backgroundPosition: banner.objectPosition || "center center",
+          }}
+          role="img"
+          aria-label={banner.alt || "Hero Banner"}
+        />
       </div>
 
       <DecorativeMotifs />
-      <IncenseSmoke />
-      <LightParticles />
-      <TempleBell className={styles.bellLeft} delay="0s" />
+      <TempleBell className={styles.bellLeft} delay="0.1s" />
       <TempleBell className={styles.bellRight} delay="1.2s" />
-
-      {!banner.imageOnly && (
-        <div className={`container ${styles.content}`} key={banner.id}>
-          <motion.span
-            className={styles.eyebrow}
-            variants={textVariants.eyebrow}
-            initial="hidden"
-            animate="visible"
-          >
-            Welcome to A1 Andal
-          </motion.span>
-          <motion.h1 variants={textVariants.heading} initial="hidden" animate="visible">
-            {banner.title}
-          </motion.h1>
-          <motion.p variants={textVariants.subheading} initial="hidden" animate="visible">
-            {banner.subtitle}
-          </motion.p>
-          <motion.div
-            className={styles.ctaRow}
-            variants={textVariants.cta}
-            initial="hidden"
-            animate="visible"
-          >
-            <HeroCTAButton to={banner.ctaLink ?? '/products'} ctaLabel={banner.ctaLabel ?? 'Explore Products'} />
-          </motion.div>
-        </div>
-      )}
-
-      {banners.length > 1 && (
-        <div className={styles.dots}>
-          {banners.map((b, i) => (
-            <button
-              key={b.id}
-              aria-label={`Show slide ${i + 1}`}
-              className={i === active ? styles.dotActive : styles.dot}
-              onClick={() => setActive(i)}
-            />
-          ))}
-        </div>
-      )}
-
-      <ScrollIndicator />
-    </section>
+   </section>
   )
 }

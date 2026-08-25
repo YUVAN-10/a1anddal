@@ -1,34 +1,15 @@
-import { getPlaceholderImage } from '../../utils/placeholderImage'
-import poojaEssentials from '../../assets/pooja-essentials-banner.png'
-
+import poojaEssentials from '../../assets/IMG-20260822-WA0018.jpeg'
+import sliderHero from '../../assets/slider-hero.jpeg'
 export const banners = [
   {
-    id: 'banner-hero-0',
-    image: poojaEssentials,
-    imageOnly: true,
-    ctaLink: '/products',
-    order: 0,
-    active: true,
-  },
-  {
-    id: 'banner-hero-1',
-    image: poojaEssentials,
-    title: 'Festive Fragrance Collection',
-    subtitle: 'Curated incense, dhoop and dhuna gift sets for every celebration, up to 30% off',
-    ctaLabel: 'Shop the Collection',
-    ctaLink: '/products?category=cat-collections',
-    order: 1,
-    active: true,
-  },
-   {
-    id: 'banner-hero-2',
-    image: poojaEssentials,
-    title: 'Experience Divine Fragrance Every Day',
-    subtitle:
-      'Discover premium incense sticks and authentic dhuna crafted for pooja, meditation and peaceful living.',
-    ctaLabel: 'Explore Products',
-    ctaLink: '/products',
-    order: 2,
+    id: 'banner-hero-3',
+    image: sliderHero,
+    objectPosition: 'center 45%',
+    title: 'Premium Pooja Essentials',
+    subtitle: 'For every sacred occasion — quality offerings from A1 Andal',
+    ctaLabel: 'Shop Pooja Essentials',
+    ctaLink: '/products?category=cat-pooja-essentials',
+    order: 3,
     active: true,
   },
 ]

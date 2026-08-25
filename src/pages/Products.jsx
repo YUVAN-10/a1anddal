@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import PageHero from '../components/common/PageHero'
-import productsHeroBanner from '../assets/temple-hero.png'
+import productsHeroBanner from '../assets/slider-hero.jpeg'
 import ProductGrid from '../components/product/ProductGrid'
 import Loader from '../components/common/Loader'
 import TempleMotif from '../components/common/decor/TempleMotif'
@@ -19,8 +19,7 @@ export default function Products() {
   return (
     <>
       <PageHero
-        title="Our Products"
-        subtitle="Handcrafted fragrances for every ritual and moment of devotion"
+        
         backgroundImage={productsHeroBanner}
       />
 

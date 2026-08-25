@@ -3,7 +3,7 @@ import styles from './TempleBell.module.css'
 // Small decorative temple bell (ghanti) — swings gently on a slow, mostly-idle loop.
 // Positioning is left to the consumer (via className); delay lets multiple bells
 // on the same page swing slightly out of sync so it reads as natural, not mechanical.
-export default function TempleBell({ className = '', delay = '0s', size = 34 }) {
+export default function TempleBell({ className = '', delay = '0.1s', size = 34 }) {
   const height = Math.round((size * 48) / 34)
 
   return (

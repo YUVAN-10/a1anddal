@@ -1,78 +1,64 @@
+/* ==========================================
+   HERO SECTION
+========================================== */
+
 .hero {
   position: relative;
-  min-height: 68vh;
+  width: 100%;
+  aspect-ratio: 1000 / 480;
+  max-height: 480px;
+  min-height: 220px;
   display: flex;
   align-items: center;
   overflow: hidden;
   color: var(--color-white);
+  background: #FFF8E7;
 }
 
-
+/* Background wrapper */
 .slideWrap {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  /* one-time fade + scale-down entrance on first paint */
-  animation: heroEntrance 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.bgImage {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease;
-  transform: scale(1);
-  /* slow continuous Ken Burns zoom, independent of the crossfade above */
-  animation: heroKenBurns 30s ease-in-out infinite alternate;
-  will-change: transform;
+  overflow: hidden;
 }
 
-.bgActive {
+/* Banner Image */
+.bgImage {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
   opacity: 1;
 }
 
-@keyframes heroEntrance {
-  from {
-    opacity: 0;
-    transform: scale(1.05);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+/* Smooth zoom animation */
+/* Removed Ken Burns scaling animation to prevent overflow */
 
-@keyframes heroKenBurns {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.08);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .slideWrap {
-    animation: none;
-  }
-  .bgImage {
-    animation: none;
-  }
-}
+/* ==========================================
+   OVERLAY
+========================================== */
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(93, 64, 55, 0.72) 0%,
-    rgba(93, 64, 55, 0.5) 45%,
-    rgba(93, 64, 55, 0.28) 100%
-  );
+  background: linear-gradient(120deg,
+      rgba(93, 64, 55, 0.65) 0%,
+      rgba(93, 64, 55, 0.45) 45%,
+      rgba(93, 64, 55, 0.2) 100%);
 }
+
+/* ==========================================
+   CONTENT
+========================================== */
 
 .content {
   position: relative;
@@ -84,9 +70,9 @@
   display: inline-block;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  font-size: 0.76rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: #ffe3ba;
+  color: #FFE3BA;
   margin-bottom: var(--space-3);
 }
 
@@ -96,11 +82,13 @@
 }
 
 .content p {
-  color: #f4e9de;
+  color: #F4E9DE;
   font-size: 1.05rem;
   margin-bottom: var(--space-5);
   max-width: 480px;
 }
+
+/* CTA Buttons */
 
 .ctaRow {
   display: flex;
@@ -108,13 +96,9 @@
   flex-wrap: wrap;
 }
 
-/* Lift/scale/shine/glow/ripple now live on the shared Button component itself —
-   this file only owns the trailing arrow, which is unique to this CTA's copy. */
 .ctaArrow {
   display: inline-block;
-  margin-left: 2px;
-  position: relative;
-  z-index: 1;
+  margin-left: 4px;
   transition: transform 0.3s ease;
 }
 
@@ -124,30 +108,28 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .ctaArrow {
-    transition: none;
-  }
-}
-
 .outlineOnDark {
-  color: var(--color-white) !important;
-  border-color: var(--color-white) !important;
+  color: white !important;
+  border-color: white !important;
 }
 
 .outlineOnDark:hover {
-  background: var(--color-white) !important;
+  background: white !important;
   color: var(--color-heading) !important;
 }
 
+/* ==========================================
+   DOTS
+========================================== */
+
 .dots {
   position: absolute;
-  bottom: var(--space-5);
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   gap: 8px;
-  z-index: 2;
+  z-index: 5;
 }
 
 .dot,
@@ -156,49 +138,133 @@
   height: 8px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5);
-  transition: background var(--transition-fast), width var(--transition-fast);
+  transition: background .3s ease, width .3s ease;
 }
 
 .dotActive {
-  background: var(--color-white);
-  width: 22px;
-  border-radius: var(--radius-full);
+  width: 24px;
+  border-radius: 999px;
+  background: white;
 }
+
+/* ==========================================
+   BELLS
+========================================== */
 
 .bellLeft,
 .bellRight {
   position: absolute;
   top: 22px;
-  z-index: 3;
+  z-index: 4;
 }
 
 .bellLeft {
-  left: 34px;
+  left: 30px;
 }
 
 .bellRight {
-  right: 34px;
+  right: 30px;
 }
 
-@media (max-width: 640px) {
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
   .hero {
-    min-height: 56vh;
+    aspect-ratio: 1000 / 480;
+    max-height: 400px;
   }
 
-  .bellLeft,
-  .bellRight {
-    top: 12px;
+  .content {
+    max-width: 560px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+  .hero {
+    aspect-ratio: 1000 / 480;
+    max-height: 360px;
+  }
+
+  .slideWrap {
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .content {
+    width: 90%;
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .content p {
+    font-size: 0.95rem;
+    margin-inline: auto;
+  }
+
+  .ctaRow {
+    justify-content: center;
   }
 
   .bellLeft {
-    left: 14px;
-    transform: scale(0.8);
-    transform-origin: top left;
+    left: 12px;
+    top: 12px;
+    transform: scale(.8);
   }
 
   .bellRight {
-    right: 14px;
-    transform: scale(0.8);
-    transform-origin: top right;
+    right: 12px;
+    top: 12px;
+    transform: scale(.8);
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+  .hero {
+    aspect-ratio: 16 / 9;
+    max-height: 300px;
+  }
+
+  .content h1 {
+    font-size: 1.6rem;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+  }
+
+  .eyebrow {
+    font-size: 0.65rem;
+  }
+
+  .dots {
+    bottom: 16px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .bgImage {
+    animation: none;
+    transform: none;
   }
 }

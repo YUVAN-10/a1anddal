@@ -8,7 +8,10 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
-
+img {
+  max-width: 100%;   /* ← prevents your image from ever stretching wider */
+  height: auto;      /* ← prevents your image from filling height */
+}
 h1,
 h2,
 h3,
