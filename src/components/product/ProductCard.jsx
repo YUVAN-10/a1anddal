@@ -47,15 +47,17 @@ export default function ProductCard({ product }) {
           {product.name}
         </Link>
 
-        <span className={styles.price}>{formatStartingPrice(product)}</span>
+        <div className={styles.priceRow}>
+          <span className={styles.price}>{formatStartingPrice(product)}</span>
 
-        <div className={styles.ctaWrap}>
-          <Button to={`/products/${product.slug}`} variant="outline" size="sm" className={styles.viewDetails}>
-            View Details
-            <span className={styles.btnArrow} aria-hidden="true">
-              &rarr;
-            </span>
-          </Button>
+          <div className={styles.ctaWrap}>
+            <Button to={`/products/${product.slug}`} variant="outline" size="sm" className={styles.viewDetails}>
+              View Details
+              <span className={styles.btnArrow} aria-hidden="true">
+                &rarr;
+              </span>
+            </Button>
+          </div>
         </div>
       </div>
     </article>
