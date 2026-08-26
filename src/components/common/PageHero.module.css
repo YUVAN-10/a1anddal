@@ -10,17 +10,18 @@
   background-repeat: no-repeat;
 }
 
-@media (max-width: 768px) {
-  .hero {
-    aspect-ratio: 1600 / 750;
-  }
-}
-
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   /* background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.45) 100%); */
+}
+
+@media (max-width: 768px) {
+  .hero {
+    aspect-ratio: 1800 / 1000;
+    background-size: 100% 100% !important;
+  }
 }
 
 .bellLeft,
@@ -57,6 +58,7 @@
 }
 
 @media (max-width: 640px) {
+
   .bellLeft,
   .bellRight {
     top: 12px;

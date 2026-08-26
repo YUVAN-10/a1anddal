@@ -181,6 +181,15 @@
 ========================================== */
 
 @media (max-width: 768px) {
+  .hero {
+    aspect-ratio: 1800 / 1000;
+  }
+
+  .bgImage {
+    background-size: 100% 100% !important;
+    object-fit: fill !important;
+  }
+
   .slideWrap {
     inset: 0;
     overflow: hidden;
