@@ -181,7 +181,7 @@ export const products = [
     tags: ['dhoop', 'cone', 'chandan'],
     description:
       'Vasudhaa Chandan Cones are crafted with the soothing essence of pure sandalwood to create a calm, peaceful and divine atmosphere, making them ideal for daily pooja, meditation, yoga and relaxation with a warm, long-lasting fragrance.',
-    images: [chandanCone1, chandanCone2],
+    images: [chandanCone2, chandanCone1],
   }),
   product({
     id: 'prod-19-brand-loban-candy-stick',
