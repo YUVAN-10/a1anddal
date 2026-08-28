@@ -147,7 +147,7 @@
 .price {
   font-weight: 700;
   color: var(--color-heading);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   transition: color 0.3s ease, opacity 0.3s ease;
   white-space: nowrap;
 }
@@ -172,7 +172,7 @@
 
 @media (max-width: 480px) {
   .price {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
   }
   .viewDetails {
     padding: 8px 12px !important;
