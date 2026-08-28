@@ -2,6 +2,8 @@ import { getPlaceholderImage } from '../../utils/placeholderImage'
 import sambraniCup1 from '../../assets/products/sambrani-dhoop-cups-1.jpg'
 import sambraniCup2 from '../../assets/products/sambrani-dhoop-cups-2.jpg'
 import sambraniCup3 from '../../assets/products/sambrani-dhoop-cups-3.jpg'
+import aalayaaBlackCupBox from '../../assets/products/aalayaa-black-cup-sambrani-box.jpeg'
+import aalayaaSandalCupBox from '../../assets/products/aalayaa-sandal-cup-sambrani-box.jpeg'
 import chandanCone1 from '../../assets/products/dhoop-cones-1.jpg'
 import chandanCone2 from '../../assets/products/dhoop-cones-2.jpg'
 import saravanabhavaJar1 from '../../assets/products/saravanabhava-agarbathi-jar-1.jpg'
@@ -88,7 +90,7 @@ export const products = [
     tags: ['sambrani', 'cup', 'loban'],
     description:
       'Aalayaa Black Cup Sambrani — Loban Fragrance offers a rich, calming aroma that purifies the surroundings and creates a peaceful, spiritual ambiance.',
-    images: [sambraniCup3],
+    images: [aalayaaBlackCupBox],
   }),
   product({
     id: 'prod-aalayaa-sandal-cup-sambrani',
@@ -106,7 +108,7 @@ export const products = [
     tags: ['sambrani', 'cup', 'sandal'],
     description:
       'Aalaayaa Sandal Cup Sambrani — Sandal Fragrance fills your space with the soothing, long-lasting aroma of pure sandalwood, creating a calm and divine atmosphere.',
-    images: [sambraniCup1, sambraniCup2],
+    images: [aalayaaSandalCupBox],
   }),
   product({
     id: 'prod-aalayaa-dasangam-plain-cup',

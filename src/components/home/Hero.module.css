@@ -147,24 +147,7 @@
   background: white;
 }
 
-/* ==========================================
-   BELLS
-========================================== */
 
-.bellLeft,
-.bellRight {
-  position: absolute;
-  top: 22px;
-  z-index: 4;
-}
-
-.bellLeft {
-  left: 30px;
-}
-
-.bellRight {
-  right: 30px;
-}
 
 /* ==========================================
    TABLET
@@ -214,18 +197,6 @@
 
   .ctaRow {
     justify-content: center;
-  }
-
-  .bellLeft {
-    left: 12px;
-    top: 12px;
-    transform: scale(.8);
-  }
-
-  .bellRight {
-    right: 12px;
-    top: 12px;
-    transform: scale(.8);
   }
 }
 

@@ -24,20 +24,7 @@
   }
 }
 
-.bellLeft,
-.bellRight {
-  position: absolute;
-  top: 20px;
-  z-index: 2;
-}
 
-.bellLeft {
-  left: 34px;
-}
-
-.bellRight {
-  right: 34px;
-}
 
 .intro {
   position: relative;
@@ -55,24 +42,4 @@
 .intro p {
   color: #f0dcc0;
   font-size: 1.05rem;
-}
-
-@media (max-width: 640px) {
-
-  .bellLeft,
-  .bellRight {
-    top: 12px;
-  }
-
-  .bellLeft {
-    left: 14px;
-    transform: scale(0.8);
-    transform-origin: top left;
-  }
-
-  .bellRight {
-    right: 14px;
-    transform: scale(0.8);
-    transform-origin: top right;
-  }
 }

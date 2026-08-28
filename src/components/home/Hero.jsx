@@ -1,6 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import Button from '../common/Button'
-import TempleBell from '../common/TempleBell'
 import IncenseSmoke from './hero/IncenseSmoke'
 import LightParticles from './hero/LightParticles'
 import SunRays from './hero/SunRays'
@@ -80,8 +79,6 @@ export default function Hero({ banners }) {
       </div>
 
       <DecorativeMotifs />
-      <TempleBell className={styles.bellLeft} delay="0.1s" />
-      <TempleBell className={styles.bellRight} delay="1.2s" />
-   </section>
+    </section>
   )
 }
