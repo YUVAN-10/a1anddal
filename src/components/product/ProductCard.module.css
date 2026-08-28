@@ -125,7 +125,7 @@
   font-family: var(--font-body);
   font-weight: 600;
   color: var(--color-heading);
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   line-height: 1.35;
   min-height: calc(1.35em * 2);
   display: -webkit-box;
@@ -147,7 +147,7 @@
 .price {
   font-weight: 700;
   color: var(--color-heading);
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   transition: color 0.3s ease, opacity 0.3s ease;
   white-space: nowrap;
 }
@@ -165,6 +165,8 @@
   border-color: transparent;
   position: relative;
   overflow: hidden;
+  font-size: 0.95rem !important;
+  padding: 8px 16px !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
 }
 
