@@ -172,11 +172,11 @@
 
 @media (max-width: 480px) {
   .price {
-    font-size: 0.8rem;
+    font-size: 1.05rem;
   }
   .viewDetails {
-    padding: 6px 10px !important;
-    font-size: 0.72rem !important;
+    padding: 8px 12px !important;
+    font-size: 0.9rem !important;
   }
   .priceRow {
     gap: 4px;
