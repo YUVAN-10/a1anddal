@@ -34,8 +34,7 @@ export default function ProductGrid({ products }) {
       className={styles.grid}
       variants={containerVariants}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      animate="visible"
     >
       {products.map((product) => (
         <motion.div key={product.id} className={styles.cardSlot} variants={itemVariants}>
